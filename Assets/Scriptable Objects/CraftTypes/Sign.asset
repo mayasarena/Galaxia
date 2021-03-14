@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34938033f705f46cd996f3dce6d82363, type: 3}
+  m_Name: Sign
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7459690443671406058, guid: 57bf71eedb0dc4b32937b11742dbefeb, type: 3}
+  template: {fileID: 7058802807329434938, guid: c8abb7454aa3a4caeb53aa98b1c6d451, type: 3}
+  itemsNeeded:
+  - {fileID: 11400000, guid: d94b2149633f84137b64ceb4349199bc, type: 2}
+  amountNeeded: 03000000

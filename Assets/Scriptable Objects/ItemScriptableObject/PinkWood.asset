@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
+  m_Name: PinkWood
+  m_EditorClassIdentifier: 
+  itemName: 
+  count: 0
+  item: {fileID: 6725418479162575261, guid: 50bdb176f440a40fd914cd0e4587d047, type: 3}
+  itemButton: {fileID: 5696467134170151766, guid: f46b036053c5246fe809b4e01a6f45e5, type: 3}

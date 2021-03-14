@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
+  m_Name: PinkRock
+  m_EditorClassIdentifier: 
+  itemName: 
+  count: 0
+  item: {fileID: 4843192462402593728, guid: fc0ed1405e12f44b3b85c463a31c6041, type: 3}
+  itemButton: {fileID: 3440664725740696136, guid: 59b91bd99b5b5457d8b75f196d6e6984, type: 3}

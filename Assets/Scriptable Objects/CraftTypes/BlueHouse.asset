@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34938033f705f46cd996f3dce6d82363, type: 3}
+  m_Name: BlueHouse
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1596951559718319822, guid: b9e6562b36bae47edb4ddfe3c7a7e164, type: 3}
+  template: {fileID: 2959858096723793997, guid: 27168cb1ef5e941cbad72ac36fc00ced, type: 3}
+  itemsNeeded:
+  - {fileID: 11400000, guid: d94b2149633f84137b64ceb4349199bc, type: 2}
+  - {fileID: 11400000, guid: 88720ab4686504e91bce90c32f7112aa, type: 2}
+  amountNeeded: 0a00000005000000

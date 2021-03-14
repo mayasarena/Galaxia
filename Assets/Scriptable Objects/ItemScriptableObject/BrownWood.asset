@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
+  m_Name: BrownWood
+  m_EditorClassIdentifier: 
+  itemName: 
+  count: 40
+  item: {fileID: 5698926954204405327, guid: 0aec26b59b34b46b3be04e10eb611cee, type: 3}
+  itemButton: {fileID: 1657265876849372043, guid: e64a0e28737d14d56a1a734163e024d2, type: 3}
