@@ -18,15 +18,25 @@ public class NPC : MonoBehaviour
 
     private Animator anim;
 
-    [TextArea(15, 10)]
+    [TextArea(5, 10)]
     public string dialogue;
     public Text clickText;
-    public Image dialogueBg;
+    public GameObject dialogueBox;
     public Text dialogueText;
     public bool canChat;
 
+    // Quests
+    public bool givesQuest;
+    public bool chatDisabled;
+    public Button questButton;
+
     void Start()
     {
+        dialogueText.text = dialogue;
+        clickText.gameObject.SetActive(false);
+        dialogueBox.gameObject.SetActive(false);
+        questButton.gameObject.SetActive(false);
+
         rigidBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
@@ -41,13 +51,21 @@ public class NPC : MonoBehaviour
     void Update()
     {
         // Check if player wants to chat
-        if (Input.GetMouseButtonDown(0) && canChat)
+        if (Input.GetMouseButtonDown(0) && canChat && !chatDisabled)
         {
-            Debug.Log("talk");
             clickText.gameObject.SetActive(false);
-            dialogueBg.gameObject.SetActive(true);
-            dialogueText.gameObject.SetActive(true);
-            dialogueText.text = dialogue;
+            dialogueBox.gameObject.SetActive(true);
+
+            if (givesQuest)
+            {
+                questButton.gameObject.SetActive(true);
+            }
+        }
+
+        if (givesQuest && GetComponent<GiveQuest>().quest.isActive && !chatDisabled) {
+            chatDisabled = true;
+            dialogueBox.gameObject.SetActive(false);
+            questButton.gameObject.SetActive(false);
         }
     }
 
@@ -120,13 +138,16 @@ public class NPC : MonoBehaviour
         // Enable chat UI
         if (other.tag == "Player")
         {
-            clickText.gameObject.SetActive(true);
-            isWalking = false;
-            anim.SetBool("isMoving", false);
-            anim.SetFloat("moveX", Input.GetAxisRaw("Horizontal") * -1);
-            anim.SetFloat("moveY", Input.GetAxisRaw("Vertical") * -1);
-            rigidBody.bodyType = RigidbodyType2D.Static; 
-            canChat = true;
+            if (!chatDisabled)
+            {
+                clickText.gameObject.SetActive(true);
+                isWalking = false;
+                anim.SetBool("isMoving", false);
+                anim.SetFloat("moveX", Input.GetAxisRaw("Horizontal") * -1);
+                anim.SetFloat("moveY", Input.GetAxisRaw("Vertical") * -1);
+                rigidBody.bodyType = RigidbodyType2D.Static; 
+                canChat = true;
+            }
         }
 
         // Stop NPC from bumping into structures
@@ -142,9 +163,9 @@ public class NPC : MonoBehaviour
         // Disable chat UI when player exits chatting bounds
         if (other.tag == "Player")
         {
-            dialogueBg.gameObject.SetActive(false);
-            dialogueText.gameObject.SetActive(false);
+            dialogueBox.gameObject.SetActive(false);
             clickText.gameObject.SetActive(false);
+            questButton.gameObject.SetActive(false);
             rigidBody.bodyType = RigidbodyType2D.Dynamic; 
             canChat = false;
             isWalking = true;
