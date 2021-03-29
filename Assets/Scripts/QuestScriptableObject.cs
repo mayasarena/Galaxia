@@ -6,6 +6,7 @@ using UnityEngine;
 public class QuestScriptableObject : ScriptableObject
 {
     public bool isActive;
+    public bool isCompleted;
     public string title;
     [TextArea(5, 10)]
     public string description;

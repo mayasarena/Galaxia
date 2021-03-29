@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34938033f705f46cd996f3dce6d82363, type: 3}
   m_Name: Tree
   m_EditorClassIdentifier: 
+  craftName: TREE
   prefab: {fileID: 6635774072254869879, guid: 4bd9fb5da469246d88cc3d48f3502856, type: 3}
   template: {fileID: 2258273244050964819, guid: 6a9ec4dfaf28d445ebaeb8071dc3d761, type: 3}
+  craftSprite: {fileID: 5682040869534660785, guid: 3110d08fa597d4b8fac7bfbea056bea7, type: 3}
   itemsNeeded:
   - {fileID: 11400000, guid: 91c9feb6b6e844bd39eb57f5a47b5d46, type: 2}
   - {fileID: 11400000, guid: d94b2149633f84137b64ceb4349199bc, type: 2}

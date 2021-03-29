@@ -9,12 +9,15 @@ public class QuestManager : MonoBehaviour
     public List<QuestScriptableObject> activeQuests;
 
     public GameObject questWindow;
+    public GameObject completeQuestWindow;
     public QuestMenu questMenu;
 
     public Text titleText;
     public Text descriptionText;
     public Text experienceText;
     public Text moneyText;
+
+    public Text completedQuestText;
 
     public QuestScriptableObject selectedQuest;
 
@@ -55,5 +58,20 @@ public class QuestManager : MonoBehaviour
         activeQuests.Add(selectedQuest);
         questWindow.gameObject.SetActive(false);
         questMenu.updateQuestsMenu();
+    }
+
+    public void completeQuest(QuestScriptableObject quest)
+    {
+        quest.isActive = false;
+        quest.isCompleted = true;
+        activeQuests.Remove(quest);
+        questMenu.updateQuestsMenu();
+        completeQuestWindow.gameObject.SetActive(true);
+        completedQuestText.text = quest.title;
+    }
+
+    public void closeCompleteQuestWindow()
+    {
+        completeQuestWindow.SetActive(false);
     }
 }

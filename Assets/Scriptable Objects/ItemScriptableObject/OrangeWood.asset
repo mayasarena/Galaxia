@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
   m_Name: OrangeWood
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Orange Wood
   count: 0
   item: {fileID: 5982717256503742271, guid: 94572781cf49649a9bb94f2e9d32047c, type: 3}
   itemButton: {fileID: 5637114715940171664, guid: af6f9bf1b19d14f62888a5d7dda69182, type: 3}
+  itemSprite: {fileID: -8175148697194645426, guid: 8203a436898dd4d029bb1b0ebb6f1892, type: 3}

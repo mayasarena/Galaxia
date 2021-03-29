@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
   m_Name: GreyRock
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Grey Rock
   count: 15
   item: {fileID: 343747842294877560, guid: a543ff9531d6c4027869daaf86cdbfeb, type: 3}
   itemButton: {fileID: 3835804494426697123, guid: 9bb826f4103b44678802d76b2c5edd68, type: 3}
+  itemSprite: {fileID: -5530737080314504112, guid: c6818dc91c8564ac1b6044fa0a69bbac, type: 3}
