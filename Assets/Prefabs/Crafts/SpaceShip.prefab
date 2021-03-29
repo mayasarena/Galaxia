@@ -252,7 +252,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 3d09ceec06b374ef9a1f64b2663bd710, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -277,7 +277,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.2692604, y: -0.6791513}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -288,7 +288,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.3, y: 2.7}
+  m_Size: {x: 4.7614794, y: 1.3416975}
   m_EdgeRadius: 0
 --- !u!58 &2366545598516129792
 CircleCollider2D:
@@ -318,6 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace000613e02f426895c1612335c7371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickText: {fileID: 0}
+  clickText: {fileID: 2366545596904722142}
   playerInBounds: 0
   travelMenu: {fileID: 0}
+  spaceShipQuest: {fileID: 11400000, guid: 86fe59aa3d30a41899753816c1333c21, type: 2}

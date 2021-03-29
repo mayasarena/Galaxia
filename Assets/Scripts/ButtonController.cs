@@ -34,6 +34,12 @@ public class ButtonController : MonoBehaviour
                 currentTemplate.transform.GetChild(5).GetComponent<Text>().text = craft.amountNeeded[1].ToString();
             }
 
+            else
+            {
+                currentTemplate.transform.GetChild(4).GetComponent<Image>().enabled = false;
+                currentTemplate.transform.GetChild(5).GetComponent<Text>().enabled = false;
+            }
+
             buttonList.Add(currentTemplate);
         }
 

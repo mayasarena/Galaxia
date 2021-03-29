@@ -13,6 +13,7 @@ public class SpaceShip : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        travelMenu = GameObject.Find("Travel Menu").GetComponent<TravelMenu>();
         clickText.gameObject.SetActive(false);
         
         if (spaceShipQuest.isActive)

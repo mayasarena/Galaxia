@@ -29,6 +29,11 @@ public class QuestMenu : MonoBehaviour
         questTemplate.SetActive(true);
         noActiveQuests.SetActive(false);
 
+        if (questManager.activeQuests.Count < 1)
+        {
+            noActiveQuests.SetActive(true);
+        }
+
         foreach (QuestScriptableObject quest in questManager.activeQuests)
         {
             currentTemplate = Instantiate(questTemplate, transform);
