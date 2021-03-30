@@ -10,9 +10,11 @@ public class ButtonController : MonoBehaviour
     private int[] amountList;
     private int itemCount;
     private int amountNeeded;
+    private int moneyNeeded;
     private bool notEnough;
     private CraftTypeScriptableObject craftType;
     public List<GameObject> buttonList;
+    public PlayerData playerData;
 
     private void Start()
     {
@@ -27,6 +29,7 @@ public class ButtonController : MonoBehaviour
             currentTemplate.transform.GetChild(1).GetComponent<Image>().sprite = craft.craftSprite;
             currentTemplate.transform.GetChild(2).GetComponent<Image>().sprite = craft.itemsNeeded[0].itemSprite;
             currentTemplate.transform.GetChild(3).GetComponent<Text>().text = craft.amountNeeded[0].ToString();
+            currentTemplate.transform.GetChild(6).GetComponent<Text>().text = craft.price.ToString();
 
             if (craft.itemsNeeded.Length == 2)
             {
@@ -56,6 +59,7 @@ public class ButtonController : MonoBehaviour
             craftType = button.GetComponent<InitiateBuild>().craftTypeSO;
             itemSOList = craftType.itemsNeeded;
             amountList = craftType.amountNeeded;
+            moneyNeeded = craftType.price;
 
             // Iterate over items needed, check amount needed
             for (int i = 0; i < itemSOList.Length; i++)
@@ -72,7 +76,14 @@ public class ButtonController : MonoBehaviour
                 }
             }
 
-            // If player has enough items, enable button
+            if (playerData.money < moneyNeeded)
+            {
+                button.GetComponent<Button>().interactable = false;
+                button.GetComponent<CanvasGroup>().alpha = 0.5f;
+                notEnough = true;
+            }
+
+            // If player has enough items and money, enable button
             if (!notEnough)
             {
                 button.GetComponent<Button>().interactable = true;

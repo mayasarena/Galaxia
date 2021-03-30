@@ -11,8 +11,6 @@ public class QuestScriptableObject : ScriptableObject
     [TextArea(5, 10)]
     public string description;
 
-    [Header("Include REWARD: and XP:")]
-    [Header("These are strings")]
-    public string moneyReward;
-    public string xpReward;
+    public int moneyReward;
+    public int xpReward;
 }

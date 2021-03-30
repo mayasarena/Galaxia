@@ -10,6 +10,7 @@ public class CraftTypeScriptableObject : ScriptableObject
     public Transform prefab;
     public GameObject template;
     public Sprite craftSprite;
+    public int price;
     public ItemScriptableObject[] itemsNeeded;
     public int[] amountNeeded;
 }

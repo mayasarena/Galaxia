@@ -19,6 +19,8 @@ public class SpaceShip : MonoBehaviour
         if (spaceShipQuest.isActive)
         {
             GameObject.Find("QuestManager").GetComponent<QuestManager>().completeQuest(spaceShipQuest);
+            GameObject.Find("PlayerStatsManager").GetComponent<PlayerStatsManager>().updateXP(spaceShipQuest.xpReward);
+            GameObject.Find("PlayerStatsManager").GetComponent<PlayerStatsManager>().addMoney(spaceShipQuest.moneyReward);
         }
     }
 

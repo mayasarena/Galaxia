@@ -16,6 +16,7 @@ MonoBehaviour:
   prefab: {fileID: 4924252247381047216, guid: e8ead227aa1064d0c87c36b491e0bdec, type: 3}
   template: {fileID: 3307404645630987230, guid: fe4df464b80d2493eb3ea397d448b25b, type: 3}
   craftSprite: {fileID: 6710660792292893781, guid: 3110d08fa597d4b8fac7bfbea056bea7, type: 3}
+  price: 50
   itemsNeeded:
   - {fileID: 11400000, guid: a58e5a4ff2e0047c6a696c2f149fff48, type: 2}
   - {fileID: 11400000, guid: 44605cec7635541bd88e5b6f37e39161, type: 2}

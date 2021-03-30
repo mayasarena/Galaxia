@@ -62,6 +62,9 @@ public class BuildingManager : MonoBehaviour
                         itemSOList[i].count -= amountNeeded;
                     }
 
+                    // Decrease money
+                    GameObject.Find("PlayerStatsManager").GetComponent<PlayerStatsManager>().subtractMoney(activeCraftType.price);
+
                     instantiate = false;
                     Destroy(target);
                     // Place craft down

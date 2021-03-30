@@ -47,8 +47,8 @@ public class QuestManager : MonoBehaviour
     {
         titleText.text = quest.title;
         descriptionText.text = quest.description;
-        experienceText.text = quest.xpReward;
-        moneyText.text = quest.moneyReward;
+        experienceText.text = quest.xpReward.ToString();
+        moneyText.text = quest.moneyReward.ToString();
         selectedQuest = quest;
     }
 

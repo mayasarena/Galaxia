@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BuildSpaceship
   m_EditorClassIdentifier: 
   isActive: 0
-  isCompleted: 1
+  isCompleted: 0
   title: Build a Spaceship
   description: FIND THE RESOURCES NEEDED AND BUILD A SPACESHIP.
-  moneyReward: 'REWARD: $1000'
-  xpReward: 'XP: 500'
+  moneyReward: 5000
+  xpReward: 400
