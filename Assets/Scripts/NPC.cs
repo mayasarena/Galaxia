@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class NPC : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class NPC : MonoBehaviour
     public string dialogue;
     public Text clickText;
     public GameObject dialogueBox;
-    public Text dialogueText;
+    public TMP_Text dialogueText;
     public bool canChat;
 
     void Start()

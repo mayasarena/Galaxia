@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerStatsManager : MonoBehaviour
 {
     public PlayerData playerData;
     public Slider slider;
-    public Text levelAmountText;
-    public Text moneyAmountText;
-    public Text totalXPText;
+    public TMP_Text levelAmountText;
+    public TMP_Text moneyAmountText;
+    public TMP_Text totalXPText;
     public int levelXPNeeded;
     public int levelIncreaseRate;
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class QuestMenu : MonoBehaviour
 {
@@ -37,8 +38,8 @@ public class QuestMenu : MonoBehaviour
         foreach (QuestScriptableObject quest in questManager.activeQuests)
         {
             currentTemplate = Instantiate(questTemplate, transform);
-            currentTemplate.transform.GetChild(0).GetComponent<Text>().text = quest.title;
-            currentTemplate.transform.GetChild(1).GetComponent<Text>().text = quest.description;
+            currentTemplate.transform.GetChild(0).GetComponent<TMP_Text>().text = quest.title;
+            currentTemplate.transform.GetChild(1).GetComponent<TMP_Text>().text = quest.description;
         }
 
         Destroy(questTemplate);

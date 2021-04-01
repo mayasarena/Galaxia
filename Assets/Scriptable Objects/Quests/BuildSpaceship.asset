@@ -18,3 +18,6 @@ MonoBehaviour:
   description: FIND THE RESOURCES NEEDED AND BUILD A SPACESHIP.
   moneyReward: 5000
   xpReward: 400
+  isItemQuest: 0
+  itemNeeded: {fileID: 0}
+  amountNeeded: 0

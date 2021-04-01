@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class QuestManager : MonoBehaviour
 {
@@ -12,12 +13,12 @@ public class QuestManager : MonoBehaviour
     public GameObject completeQuestWindow;
     public QuestMenu questMenu;
 
-    public Text titleText;
-    public Text descriptionText;
-    public Text experienceText;
-    public Text moneyText;
+    public TMP_Text titleText;
+    public TMP_Text descriptionText;
+    public TMP_Text experienceText;
+    public TMP_Text moneyText;
 
-    public Text completedQuestText;
+    public TMP_Text completedQuestText;
 
     public QuestScriptableObject selectedQuest;
 

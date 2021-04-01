@@ -13,4 +13,8 @@ public class QuestScriptableObject : ScriptableObject
 
     public int moneyReward;
     public int xpReward;
+
+    public bool isItemQuest;
+    public ItemScriptableObject itemNeeded;
+    public int amountNeeded;
 }

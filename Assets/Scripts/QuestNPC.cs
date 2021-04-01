@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class QuestNPC : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class QuestNPC : MonoBehaviour
     public GameObject questWindow;
     public GameObject dialogueBox;
     public Button questButton;
+    public Button itemCompleteButton;
     
     public QuestManager questManager;
 
@@ -29,15 +31,26 @@ public class QuestNPC : MonoBehaviour
     [TextArea(5, 10)]
     public string dialogue;
     public Text clickText;
-    public Text dialogueText;
+    public TMP_Text dialogueText;
     public bool canChat;
+    public bool returned = false;
 
     // Quests
     public bool chatDisabled;
 
     void Start()
     {
-        dialogueText.text = dialogue;
+        if (!quest.isCompleted)
+        {
+            dialogueText.text = dialogue;
+        }
+
+        else
+        {
+            dialogueText.text = "Thanks for the " + quest.itemNeeded.itemName + "!";
+            returned = true;
+        }
+
         clickText.gameObject.SetActive(false);
         dialogueBox.gameObject.SetActive(false);
         questButton.gameObject.SetActive(false);
@@ -56,19 +69,45 @@ public class QuestNPC : MonoBehaviour
 
     void Update()
     {
-        // Check if player wants to chat
         if (Input.GetMouseButtonDown(0) && canChat && !chatDisabled)
         {
+            if (quest.isItemQuest && quest.isActive)
+            {
+                // Update dialogue text
+                if (quest.itemNeeded.count < quest.amountNeeded && returned)
+                {
+                    questButton.gameObject.SetActive(false);
+                    dialogueBox.gameObject.SetActive(true);
+                    dialogueText.text = "Come back to me when you have " + quest.amountNeeded + " " + quest.itemNeeded.itemName;
+                }
+
+                if (!quest.isCompleted && (quest.itemNeeded.count >= quest.amountNeeded) && returned)
+                {
+                    itemCompleteButton.gameObject.SetActive(true);
+                    dialogueBox.gameObject.SetActive(true);
+                    dialogueText.text = "It looks like you have enough " + quest.itemNeeded.itemName + "!";
+                }
+            }
+
             clickText.gameObject.SetActive(false);
-            dialogueBox.gameObject.SetActive(true);
-            questButton.gameObject.SetActive(true);
+
+            if (!returned)
+            {
+                dialogueBox.gameObject.SetActive(true);
+                questButton.gameObject.SetActive(true);
+            }
+
+            if (quest.isItemQuest && quest.isCompleted)
+            {
+                dialogueBox.gameObject.SetActive(true);
+            }
         }
 
-        if (quest.isActive && !chatDisabled) {
+        if (quest.isActive && !chatDisabled && !quest.isItemQuest) {
             chatDisabled = true;
-            dialogueBox.gameObject.SetActive(false);
-            questButton.gameObject.SetActive(false);
+            disableQuestDialogue();
         }
+
     }
 
     void FixedUpdate()
@@ -168,6 +207,7 @@ public class QuestNPC : MonoBehaviour
             dialogueBox.gameObject.SetActive(false);
             clickText.gameObject.SetActive(false);
             questButton.gameObject.SetActive(false);
+            itemCompleteButton.gameObject.SetActive(false);
             rigidBody.bodyType = RigidbodyType2D.Dynamic; 
             canChat = false;
             isWalking = true;
@@ -178,8 +218,24 @@ public class QuestNPC : MonoBehaviour
     {
         dialogueBox.gameObject.SetActive(false);
         questButton.gameObject.SetActive(false);
+        itemCompleteButton.gameObject.SetActive(false);
         questWindow.gameObject.SetActive(true);
         questManager.setQuestDetails(quest);
+        returned = true;
+    }
+
+    public void completeItemQuest()
+    {
+        dialogueBox.gameObject.SetActive(false);
+        clickText.gameObject.SetActive(false);
+        questButton.gameObject.SetActive(false);
+        itemCompleteButton.gameObject.SetActive(false);
+        quest.itemNeeded.count -= quest.amountNeeded;
+        GameObject.Find("QuestManager").GetComponent<QuestManager>().completeQuest(quest);
+        GameObject.Find("PlayerStatsManager").GetComponent<PlayerStatsManager>().updateXP(quest.xpReward);
+        GameObject.Find("PlayerStatsManager").GetComponent<PlayerStatsManager>().addMoney(quest.moneyReward);
+        quest.isCompleted = true;
+        dialogueText.text = "Thanks for the " + quest.itemNeeded.itemName + "!";
     }
 
     public void disableQuestDialogue()

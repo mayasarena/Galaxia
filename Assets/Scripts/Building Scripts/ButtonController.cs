@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ButtonController : MonoBehaviour
 {
@@ -25,22 +26,22 @@ public class ButtonController : MonoBehaviour
         {
             currentTemplate = Instantiate(craftTemplate, transform);
             currentTemplate.GetComponent<InitiateBuild>().craftTypeSO = craft;
-            currentTemplate.transform.GetChild(0).GetComponent<Text>().text = craft.craftName;
+            currentTemplate.transform.GetChild(0).GetComponent<TMP_Text>().text = craft.craftName;
             currentTemplate.transform.GetChild(1).GetComponent<Image>().sprite = craft.craftSprite;
             currentTemplate.transform.GetChild(2).GetComponent<Image>().sprite = craft.itemsNeeded[0].itemSprite;
-            currentTemplate.transform.GetChild(3).GetComponent<Text>().text = craft.amountNeeded[0].ToString();
-            currentTemplate.transform.GetChild(6).GetComponent<Text>().text = craft.price.ToString();
+            currentTemplate.transform.GetChild(3).GetComponent<TMP_Text>().text = craft.amountNeeded[0].ToString();
+            currentTemplate.transform.GetChild(6).GetComponent<TMP_Text>().text = craft.price.ToString();
 
             if (craft.itemsNeeded.Length == 2)
             {
                 currentTemplate.transform.GetChild(4).GetComponent<Image>().sprite = craft.itemsNeeded[1].itemSprite;
-                currentTemplate.transform.GetChild(5).GetComponent<Text>().text = craft.amountNeeded[1].ToString();
+                currentTemplate.transform.GetChild(5).GetComponent<TMP_Text>().text = craft.amountNeeded[1].ToString();
             }
 
             else
             {
                 currentTemplate.transform.GetChild(4).GetComponent<Image>().enabled = false;
-                currentTemplate.transform.GetChild(5).GetComponent<Text>().enabled = false;
+                currentTemplate.transform.GetChild(5).GetComponent<TMP_Text>().enabled = false;
             }
 
             buttonList.Add(currentTemplate);
