@@ -22,6 +22,9 @@ public class PlayerHealthManager : MonoBehaviour
     public Transform respawnPoint;
     private bool dyingFromEnergy = false;
 
+    public Slider energySlider;
+    public int maxEnergy;
+
     // Audio Stuff
     /*
     public AudioSource hitPlayerAudio;
@@ -110,8 +113,15 @@ public class PlayerHealthManager : MonoBehaviour
         dyingFromEnergy = false;
         player.GetComponent<SpriteRenderer>().enabled = true;
         player.GetComponent<PlayerMovement>().enabled = true;
-        playerData.health = (int) maxHealth/2;
-        healthBar.SetHealth(playerData.health);
+        if (dyingFromEnergy)
+        {
+            playerData.energy = (int) maxEnergy/2;
+            energySlider.value = playerData.energy;
+        }
+        else{
+            playerData.health = (int) maxHealth/2;
+            healthBar.SetHealth(playerData.health);
+        }
         player.transform.position = respawnPoint.position;
         deathUI.alpha = 0;
     }

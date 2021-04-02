@@ -8,12 +8,12 @@ public class PlayerStatsManager : MonoBehaviour
 {
     public PlayerData playerData;
     public Slider XPslider;
-    public Slider energySlider;
     public TMP_Text levelAmountText;
     public TMP_Text moneyAmountText;
     public TMP_Text totalXPText;
     public int levelXPNeeded;
     public int levelIncreaseRate;
+    public Slider energySlider;
     public int maxEnergy;
 
     void Start()
@@ -72,8 +72,6 @@ public class PlayerStatsManager : MonoBehaviour
         playerData.energy -= energyAmount;
         if (playerData.energy <= 0)
         {
-            playerData.energy = (int) maxEnergy/2;
-            energySlider.value = playerData.energy;
             FindObjectOfType<PlayerHealthManager>().energyDie();
         }
         energySlider.value = playerData.energy;
