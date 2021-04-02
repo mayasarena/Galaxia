@@ -9,7 +9,8 @@ public class Inventory : MonoBehaviour
     public GameObject[] slots;
     public ItemScriptableObject[] itemScriptableObj;
     public ItemScriptableObject[] initiateObjsList;
-
+    public bool organize;
+    public bool inventoryOpen;
 
     void Start()
     {
@@ -19,20 +20,47 @@ public class Inventory : MonoBehaviour
             // If player has over 1 of a certain item, add it to the inventory
             if (obj.count > 0)
             {
-                // Iterate over inventory slots to find an empty one
-                for (int i = 0; i < slots.Length; i++)
+                if (obj.stackable)
                 {
-                    // If slot is empty, instantiate the inventory item button
-                    if (isFull[i] == false)
+                    Instantiate(obj.itemButton, slots[obj.inventorySlots[0]].transform, false);
+                    itemScriptableObj[obj.inventorySlots[0]] = obj;
+                    slots[obj.inventorySlots[0]].GetComponent<InventorySlot>().item = obj; 
+                    // Set slot to full
+                    isFull[obj.inventorySlots[0]] = true;
+                }
+
+                else
+                {
+                    for (int i = 0; i < obj.inventorySlots.Count; i++)
                     {
-                        Instantiate(obj.itemButton, slots[i].transform, false);
-                        itemScriptableObj[i] = obj;
+                        Instantiate(obj.itemButton, slots[obj.inventorySlots[i]].transform, false);
+                        itemScriptableObj[obj.inventorySlots[i]] = obj;
+                        slots[obj.inventorySlots[i]].GetComponent<InventorySlot>().item = obj; 
                         // Set slot to full
-                        isFull[i] = true;
-                        break;
+                        isFull[obj.inventorySlots[i]] = true;
                     }
                 }
             }
         }
+    }
+
+    public void turnOnOrganize()
+    {
+        organize = true;
+    }
+
+    public void turnOffOrganize()
+    {
+        organize = false;
+    }
+
+    public void inventoryMenuOpen()
+    {
+        inventoryOpen = true;
+    }
+
+    public void inventoryMenuClosed()
+    {
+        inventoryOpen = false;
     }
 }

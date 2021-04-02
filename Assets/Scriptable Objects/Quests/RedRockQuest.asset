@@ -15,9 +15,9 @@ MonoBehaviour:
   isActive: 0
   isCompleted: 1
   title: Red rock quest
-  description: find 10 yellow rocks and bring them back to the alien.
+  description: find 10 red rocks and bring them back to the alien.
   moneyReward: 2000
   xpReward: 5000
   isItemQuest: 1
-  itemNeeded: {fileID: 11400000, guid: a58e5a4ff2e0047c6a696c2f149fff48, type: 2}
+  itemNeeded: {fileID: 11400000, guid: 25de327379ac146748524dc3e79cf4af, type: 2}
   amountNeeded: 10

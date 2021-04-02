@@ -10,4 +10,5 @@ public class PlayerData : ScriptableObject
     public int totalXP;
     public int levelXP;
     public int level;
+    public int energy;
 }

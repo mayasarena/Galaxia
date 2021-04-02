@@ -7,18 +7,22 @@ using TMPro;
 public class PlayerStatsManager : MonoBehaviour
 {
     public PlayerData playerData;
-    public Slider slider;
+    public Slider XPslider;
+    public Slider energySlider;
     public TMP_Text levelAmountText;
     public TMP_Text moneyAmountText;
     public TMP_Text totalXPText;
     public int levelXPNeeded;
     public int levelIncreaseRate;
+    public int maxEnergy;
 
     void Start()
     {
         levelXPNeeded = (int) (Mathf.Pow(playerData.level, 2))*levelIncreaseRate;
-        slider.maxValue = levelXPNeeded;
-        slider.value = playerData.levelXP;
+        XPslider.maxValue = levelXPNeeded;
+        XPslider.value = playerData.levelXP;
+        energySlider.maxValue = maxEnergy;
+        energySlider.value = playerData.energy;
         totalXPText.text = playerData.totalXP.ToString();
         levelAmountText.text = playerData.level.ToString();
         moneyAmountText.text = playerData.money.ToString();
@@ -36,9 +40,9 @@ public class PlayerStatsManager : MonoBehaviour
             playerData.level += 1;
             levelAmountText.text = playerData.level.ToString();
             levelXPNeeded = (int) (Mathf.Pow(playerData.level, 2))*levelIncreaseRate;
-            slider.maxValue = levelXPNeeded;
+            XPslider.maxValue = levelXPNeeded;
         }
-        slider.value = playerData.levelXP;
+        XPslider.value = playerData.levelXP;
     }
 
     public void addMoney(int moneyAmount)
@@ -51,5 +55,27 @@ public class PlayerStatsManager : MonoBehaviour
     {
         playerData.money -= moneyAmount;
         moneyAmountText.text = playerData.money.ToString();
+    }
+
+    public void addEnergy(int energyAmount)
+    {
+        playerData.energy += energyAmount;
+        if (playerData.energy > maxEnergy)
+        {
+            playerData.energy = maxEnergy;
+        }
+        energySlider.value = playerData.energy;
+    }
+
+    public void subtractEnergy(int energyAmount)
+    {
+        playerData.energy -= energyAmount;
+        if (playerData.energy <= 0)
+        {
+            playerData.energy = (int) maxEnergy/2;
+            energySlider.value = playerData.energy;
+            FindObjectOfType<PlayerHealthManager>().energyDie();
+        }
+        energySlider.value = playerData.energy;
     }
 }

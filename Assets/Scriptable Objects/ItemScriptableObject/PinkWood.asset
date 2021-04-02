@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
   m_Name: PinkWood
   m_EditorClassIdentifier: 
+  inventorySlots: 
   itemName: Pink Woods
   count: 0
   item: {fileID: 6725418479162575261, guid: 50bdb176f440a40fd914cd0e4587d047, type: 3}
   itemButton: {fileID: 5696467134170151766, guid: f46b036053c5246fe809b4e01a6f45e5, type: 3}
   itemSprite: {fileID: -6587842428920968576, guid: 8203a436898dd4d029bb1b0ebb6f1892, type: 3}
+  stackable: 1

@@ -9,11 +9,14 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rigidBody;
     private Animator anim;
     private bool isMoving;
+    private float timer;
+    public float energyLossRate = 1f;
     
     void Start()
     {
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
+        timer = 0f;
     }
 
     void Update()
@@ -28,6 +31,13 @@ public class PlayerMovement : MonoBehaviour
         // Check if player is moving, set animation
         else
         {
+            // Lose energy as you move
+            timer += Time.deltaTime;
+            if (timer > energyLossRate)
+            {
+                timer = 0f;
+                FindObjectOfType<PlayerStatsManager>().subtractEnergy(1);
+            }
             isMoving = true;
             anim.SetFloat("moveX", Input.GetAxisRaw("Horizontal"));
             anim.SetFloat("moveY", Input.GetAxisRaw("Vertical"));

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
   m_Name: BrownWood
   m_EditorClassIdentifier: 
+  inventorySlots: 02000000
   itemName: Brown Woods
   count: 41
   item: {fileID: 5698926954204405327, guid: 0aec26b59b34b46b3be04e10eb611cee, type: 3}
   itemButton: {fileID: 1657265876849372043, guid: e64a0e28737d14d56a1a734163e024d2, type: 3}
   itemSprite: {fileID: 3058911166262994394, guid: 8203a436898dd4d029bb1b0ebb6f1892, type: 3}
+  stackable: 1

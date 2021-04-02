@@ -17,8 +17,10 @@ public class PlayerHealthManager : MonoBehaviour
     public CanvasGroup deathUI;
     private bool playerIsDead = false;
     public float deathDelay = 1f;
-    public GameObject particles;
+    public GameObject healthParticles;
+    public GameObject energyParticles;
     public Transform respawnPoint;
+    private bool dyingFromEnergy = false;
 
     // Audio Stuff
     /*
@@ -89,7 +91,13 @@ public class PlayerHealthManager : MonoBehaviour
     // Delay the fade for a couple of seconds
     private IEnumerator DeathDelay()
     {
-        Instantiate(particles, player.transform.position, player.transform.rotation);
+        if (dyingFromEnergy)
+        {
+            Instantiate(energyParticles, player.transform.position, player.transform.rotation);
+        }
+        else{
+            Instantiate(healthParticles, player.transform.position, player.transform.rotation);
+        }
         player.GetComponent<SpriteRenderer>().enabled = false;
         player.GetComponent<PlayerMovement>().enabled = false;
         yield return new WaitForSeconds(deathDelay);
@@ -99,11 +107,19 @@ public class PlayerHealthManager : MonoBehaviour
     private void Respawn()
     {
         playerIsDead = false;
+        dyingFromEnergy = false;
         player.GetComponent<SpriteRenderer>().enabled = true;
         player.GetComponent<PlayerMovement>().enabled = true;
-        healthBar.SetHealth(maxHealth);
-        playerData.health = maxHealth;
+        playerData.health = (int) maxHealth/2;
+        healthBar.SetHealth(playerData.health);
         player.transform.position = respawnPoint.position;
         deathUI.alpha = 0;
     }
+
+    public void energyDie()
+    {
+        dyingFromEnergy = true;
+        StartCoroutine(DeathDelay());
+    }
+    
  }

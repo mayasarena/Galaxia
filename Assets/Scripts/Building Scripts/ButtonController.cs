@@ -15,12 +15,13 @@ public class ButtonController : MonoBehaviour
     private bool notEnough;
     private CraftTypeScriptableObject craftType;
     public List<GameObject> buttonList;
-    public PlayerData playerData;
+    private PlayerData playerData;
 
     private void Start()
     {
         GameObject currentTemplate;
         GameObject craftTemplate = transform.GetChild(0).gameObject;
+        playerData = FindObjectOfType<PlayerHealthManager>().playerData;
 
         foreach (CraftTypeScriptableObject craft in craftList)
         {
