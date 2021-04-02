@@ -54,4 +54,37 @@ public class Pickup : MonoBehaviour
             }
         }
     }
+
+    public void addItemToInventory(ItemScriptableObject itemSO)
+        {
+        containsSameItem = false;
+        // Iterate over inventory slots
+        for (int i = 0; i < inventory.slots.Length; i++)
+        {
+            // If the item is already in the inventory, increase the current amount
+            if (inventory.itemScriptableObj[i] == itemSO && itemSO.stackable)
+            {
+                containsSameItem = true;
+                itemSO.count += 1;
+                break;
+            }
+        }
+
+        // Iterate over slots again
+        for (int i = 0; i < inventory.slots.Length; i++)
+        {
+            // If slot is empty and the item is not already in inventory
+            if (inventory.isFull[i] == false && (containsSameItem == false || !itemSO.stackable))
+            {
+                // Set inventory as full, set inventory scriptable object
+                inventory.isFull[i] = true;
+                inventory.itemScriptableObj[i] = itemSO;
+                itemSO.count += 1;
+                itemSO.inventorySlots.Add(i);
+                // Instantiate the item button in inventory
+                Instantiate(itemSO.itemButton, inventory.slots[i].transform, false);
+                break;
+            }
+        }
+    }
 }

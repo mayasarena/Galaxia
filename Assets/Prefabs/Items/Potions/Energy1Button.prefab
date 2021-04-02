@@ -251,5 +251,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSO: {fileID: 11400000, guid: d595f442ba70e42009b7534f5ff2623b, type: 2}
   buttonAudio: {fileID: 8300000, guid: d8d04c6f80a1140db85ede568dab1f51, type: 3}
-  healAmount: 20
-  energyAmount: 50
+  healAmount: 0
+  energyAmount: 20

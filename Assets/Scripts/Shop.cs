@@ -2,25 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Shop : MonoBehaviour
 {
-    public Text clickText;
+    public GameObject clickText;
     public bool playerInBounds;
-    public GameObject shopMenu;
+    public CanvasGroup shopMenu;
 
     // Start is called before the first frame update
     void Start()
     {
-        shopMenu.SetActive(false);
+        shopMenu.blocksRaycasts = false;
+        shopMenu.alpha = 0;
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && playerInBounds)
         {
-            clickText.gameObject.SetActive(false);
-            shopMenu.SetActive(true);
+            clickText.SetActive(false);
+            shopMenu.blocksRaycasts = true;
+            shopMenu.alpha = 1;
         }
     }
 
@@ -30,7 +33,7 @@ public class Shop : MonoBehaviour
         // Enable chat UI
         if (other.tag == "Player")
         {
-            clickText.gameObject.SetActive(true);
+            clickText.SetActive(true);
             playerInBounds = true;
         }
     }
@@ -41,7 +44,7 @@ public class Shop : MonoBehaviour
         // Enable chat UI
         if (other.tag == "Player")
         {
-            clickText.gameObject.SetActive(false);
+            clickText.SetActive(false);
             playerInBounds = false;
         }
     }

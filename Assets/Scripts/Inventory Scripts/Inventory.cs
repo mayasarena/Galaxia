@@ -11,6 +11,7 @@ public class Inventory : MonoBehaviour
     public ItemScriptableObject[] initiateObjsList;
     public bool organize;
     public bool inventoryOpen;
+    public bool inventoryFull;
 
     void Start()
     {
@@ -42,6 +43,20 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
+    }
+
+    public bool isInventoryFull()
+    {
+        bool full = true;
+
+        for (int i = 0; i < isFull.Length; i++)
+        {
+            if (isFull[i] == false)
+            {
+                full = false;
+            }
+        }
+        return full;
     }
 
     public void turnOnOrganize()

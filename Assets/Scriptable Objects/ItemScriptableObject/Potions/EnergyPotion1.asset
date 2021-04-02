@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnergyPotion1
   m_EditorClassIdentifier: 
   inventorySlots: 
-  itemName: 
+  itemName: Green Energy Potion
   count: 0
   item: {fileID: 1170721949151684273, guid: e91957c4a9cd14f498c028f596e37053, type: 3}
   itemButton: {fileID: 8892487182550287430, guid: 1c298f23e2af74a7c9a0e69c6e7da032, type: 3}
