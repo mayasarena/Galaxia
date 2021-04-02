@@ -10,4 +10,5 @@ public class ItemScriptableObject : ScriptableObject
     public int count;
     public GameObject item;
     public GameObject itemButton;
+    public Sprite itemSprite;
 }

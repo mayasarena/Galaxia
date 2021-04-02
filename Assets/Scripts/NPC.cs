@@ -18,15 +18,19 @@ public class NPC : MonoBehaviour
 
     private Animator anim;
 
-    [TextArea(15, 10)]
+    [TextArea(5, 10)]
     public string dialogue;
     public Text clickText;
-    public Image dialogueBg;
+    public GameObject dialogueBox;
     public Text dialogueText;
     public bool canChat;
 
     void Start()
     {
+        dialogueText.text = dialogue;
+        clickText.gameObject.SetActive(false);
+        dialogueBox.gameObject.SetActive(false);
+
         rigidBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
@@ -43,11 +47,8 @@ public class NPC : MonoBehaviour
         // Check if player wants to chat
         if (Input.GetMouseButtonDown(0) && canChat)
         {
-            Debug.Log("talk");
             clickText.gameObject.SetActive(false);
-            dialogueBg.gameObject.SetActive(true);
-            dialogueText.gameObject.SetActive(true);
-            dialogueText.text = dialogue;
+            dialogueBox.gameObject.SetActive(true);
         }
     }
 
@@ -127,6 +128,7 @@ public class NPC : MonoBehaviour
             anim.SetFloat("moveY", Input.GetAxisRaw("Vertical") * -1);
             rigidBody.bodyType = RigidbodyType2D.Static; 
             canChat = true;
+
         }
 
         // Stop NPC from bumping into structures
@@ -142,8 +144,7 @@ public class NPC : MonoBehaviour
         // Disable chat UI when player exits chatting bounds
         if (other.tag == "Player")
         {
-            dialogueBg.gameObject.SetActive(false);
-            dialogueText.gameObject.SetActive(false);
+            dialogueBox.gameObject.SetActive(false);
             clickText.gameObject.SetActive(false);
             rigidBody.bodyType = RigidbodyType2D.Dynamic; 
             canChat = false;

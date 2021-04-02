@@ -5,13 +5,46 @@ using UnityEngine.UI;
 
 public class ButtonController : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> buttonList;
+    [SerializeField] private List<CraftTypeScriptableObject> craftList;
     private ItemScriptableObject[] itemSOList;
     private int[] amountList;
     private int itemCount;
     private int amountNeeded;
     private bool notEnough;
     private CraftTypeScriptableObject craftType;
+    public List<GameObject> buttonList;
+
+    private void Start()
+    {
+        GameObject currentTemplate;
+        GameObject craftTemplate = transform.GetChild(0).gameObject;
+
+        foreach (CraftTypeScriptableObject craft in craftList)
+        {
+            currentTemplate = Instantiate(craftTemplate, transform);
+            currentTemplate.GetComponent<InitiateBuild>().craftTypeSO = craft;
+            currentTemplate.transform.GetChild(0).GetComponent<Text>().text = craft.craftName;
+            currentTemplate.transform.GetChild(1).GetComponent<Image>().sprite = craft.craftSprite;
+            currentTemplate.transform.GetChild(2).GetComponent<Image>().sprite = craft.itemsNeeded[0].itemSprite;
+            currentTemplate.transform.GetChild(3).GetComponent<Text>().text = craft.amountNeeded[0].ToString();
+
+            if (craft.itemsNeeded.Length == 2)
+            {
+                currentTemplate.transform.GetChild(4).GetComponent<Image>().sprite = craft.itemsNeeded[1].itemSprite;
+                currentTemplate.transform.GetChild(5).GetComponent<Text>().text = craft.amountNeeded[1].ToString();
+            }
+
+            else
+            {
+                currentTemplate.transform.GetChild(4).GetComponent<Image>().enabled = false;
+                currentTemplate.transform.GetChild(5).GetComponent<Text>().enabled = false;
+            }
+
+            buttonList.Add(currentTemplate);
+        }
+
+        Destroy(craftTemplate);
+    }
 
     private void Update()
     {
