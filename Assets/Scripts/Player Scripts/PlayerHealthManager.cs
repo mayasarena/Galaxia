@@ -23,7 +23,7 @@ public class PlayerHealthManager : MonoBehaviour
     private bool dyingFromEnergy = false;
 
     public Slider energySlider;
-    public int maxEnergy;
+    private int maxEnergy;
 
     // Audio Stuff
     /*
@@ -34,6 +34,7 @@ public class PlayerHealthManager : MonoBehaviour
     
     void Start()
     {
+        maxEnergy = FindObjectOfType<PlayerStatsManager>().maxEnergy;
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(playerData.health);
     }
