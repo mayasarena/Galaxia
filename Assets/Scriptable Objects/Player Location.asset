@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f83b910fe49345e686d3a9db331efe8, type: 3}
-  m_Name: Player Data
+  m_Script: {fileID: 11500000, guid: df914cbdfcb9449118d30f16b6479411, type: 3}
+  m_Name: Player Location
   m_EditorClassIdentifier: 
-  health: 50
-  money: 5000
-  totalXP: 800
-  levelXP: 300
-  level: 3
-  energy: 455
+  value: {x: 5.76, y: 2.49}

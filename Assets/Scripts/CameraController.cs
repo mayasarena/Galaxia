@@ -13,6 +13,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         Camera.main.orthographicSize = orthoSize;
+        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
     }
 
     void LateUpdate () 

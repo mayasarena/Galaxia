@@ -6,17 +6,17 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
     private Vector3 movement;
-    private Rigidbody2D rigidBody;
     private Animator anim;
     private bool isMoving;
     private float timer;
     public float energyLossRate = 1f;
+    public VectorValueScriptableObject startingPos;
     
     void Start()
     {
         anim = GetComponent<Animator>();
-        rigidBody = GetComponent<Rigidbody2D>();
         timer = 0f;
+        transform.position = startingPos.value;
     }
 
     void Update()
