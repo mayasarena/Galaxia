@@ -11,6 +11,9 @@ public class QuestManager : MonoBehaviour
 
     public GameObject questWindow;
     public GameObject completeQuestWindow;
+    public Button buildButton;
+    public Button questButton;
+    public Button inventoryExpandButton;
     public QuestMenu questMenu;
 
     public TMP_Text titleText;
@@ -55,6 +58,9 @@ public class QuestManager : MonoBehaviour
 
     public void acceptQuest()
     {
+        buildButton.interactable = true;
+        questButton.interactable = true;
+        inventoryExpandButton.interactable = true;
         selectedQuest.isActive = true;
         activeQuests.Add(selectedQuest);
         questWindow.gameObject.SetActive(false);
@@ -67,12 +73,18 @@ public class QuestManager : MonoBehaviour
         quest.isCompleted = true;
         activeQuests.Remove(quest);
         questMenu.updateQuestsMenu();
-        completeQuestWindow.gameObject.SetActive(true);
         completedQuestText.text = quest.title;
+        buildButton.interactable = false;
+        questButton.interactable = false;
+        inventoryExpandButton.interactable = false;
+        completeQuestWindow.gameObject.SetActive(true);
     }
 
     public void closeCompleteQuestWindow()
     {
+        buildButton.interactable = true;
+        questButton.interactable = true;
+        inventoryExpandButton.interactable = true;
         completeQuestWindow.SetActive(false);
     }
 }

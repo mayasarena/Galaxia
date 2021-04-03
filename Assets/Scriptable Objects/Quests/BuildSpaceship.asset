@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BuildSpaceship
   m_EditorClassIdentifier: 
   isActive: 0
-  isCompleted: 0
+  isCompleted: 1
   title: Build a Spaceship
   description: FIND THE RESOURCES NEEDED AND BUILD A SPACESHIP.
   moneyReward: 5000

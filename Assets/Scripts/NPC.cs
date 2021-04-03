@@ -21,15 +21,15 @@ public class NPC : MonoBehaviour
 
     [TextArea(5, 10)]
     public string dialogue;
-    public Text clickText;
+    public GameObject chatButton;
     public GameObject dialogueBox;
     public TMP_Text dialogueText;
-    public bool canChat;
+    private bool playerInBounds;
 
     void Start()
     {
         dialogueText.text = dialogue;
-        clickText.gameObject.SetActive(false);
+        chatButton.SetActive(false);
         dialogueBox.gameObject.SetActive(false);
 
         rigidBody = GetComponent<Rigidbody2D>();
@@ -38,19 +38,7 @@ public class NPC : MonoBehaviour
         waitCounter = waitTime;
         walkCounter = walkTime;
 
-        canChat = false;
-
         ChooseDirection();
-    }
-
-    void Update()
-    {
-        // Check if player wants to chat
-        if (Input.GetMouseButtonDown(0) && canChat)
-        {
-            clickText.gameObject.SetActive(false);
-            dialogueBox.gameObject.SetActive(true);
-        }
     }
 
     void FixedUpdate()
@@ -94,7 +82,7 @@ public class NPC : MonoBehaviour
         }
 
         // Wait and choose a new direction if player is not in chatting bounds
-        if (!isWalking && !canChat)
+        if (!isWalking && !playerInBounds)
         {
             waitCounter -= Time.deltaTime;
             anim.SetBool("isMoving", false);
@@ -122,13 +110,13 @@ public class NPC : MonoBehaviour
         // Enable chat UI
         if (other.tag == "Player")
         {
-            clickText.gameObject.SetActive(true);
+            chatButton.SetActive(true);
             isWalking = false;
+            playerInBounds = true;
             anim.SetBool("isMoving", false);
             anim.SetFloat("moveX", Input.GetAxisRaw("Horizontal") * -1);
             anim.SetFloat("moveY", Input.GetAxisRaw("Vertical") * -1);
             rigidBody.bodyType = RigidbodyType2D.Static; 
-            canChat = true;
 
         }
 
@@ -145,12 +133,18 @@ public class NPC : MonoBehaviour
         // Disable chat UI when player exits chatting bounds
         if (other.tag == "Player")
         {
+            playerInBounds = false;
             dialogueBox.gameObject.SetActive(false);
-            clickText.gameObject.SetActive(false);
+            chatButton.SetActive(false);
             rigidBody.bodyType = RigidbodyType2D.Dynamic; 
-            canChat = false;
             isWalking = true;
         }
+    }
+
+    public void chat()
+    {
+        dialogueBox.gameObject.SetActive(true);
+        chatButton.SetActive(false);
     }
     
 }
