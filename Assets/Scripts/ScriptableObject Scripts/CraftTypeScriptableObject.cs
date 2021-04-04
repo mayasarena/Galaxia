@@ -13,4 +13,5 @@ public class CraftTypeScriptableObject : ScriptableObject
     public int price;
     public ItemScriptableObject[] itemsNeeded;
     public int[] amountNeeded;
+    public int ID; // For saving
 }

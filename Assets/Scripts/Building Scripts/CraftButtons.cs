@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ButtonController : MonoBehaviour
+public class CraftButtons : MonoBehaviour
 {
-    [SerializeField] private List<CraftTypeScriptableObject> craftList;
+    public List<CraftTypeScriptableObject> craftList;
     private ItemScriptableObject[] itemSOList;
     private int[] amountList;
     private int itemCount;

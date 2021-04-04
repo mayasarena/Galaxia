@@ -8,6 +8,7 @@ public class Pickup : MonoBehaviour
     private Inventory inventory;
     public ItemScriptableObject itemSO;
     public bool containsSameItem;
+    public AudioSource pickupAudio;
 
     private void Start()
     {
@@ -26,10 +27,13 @@ public class Pickup : MonoBehaviour
                 // If the item is already in the inventory, increase the current amount
                 if (inventory.itemScriptableObj[i] == itemSO && itemSO.stackable)
                 {
+                    pickupAudio.Play();
                     containsSameItem = true;
                     itemSO.count += 1;
                     // Destroy item on ground
-                    Destroy(gameObject);
+                    GetComponent<BoxCollider2D>().enabled = false;
+                    GetComponent<SpriteRenderer>().enabled = false;
+                    Destroy(gameObject, pickupAudio.clip.length);
                     break;
                 }
             }
@@ -40,6 +44,7 @@ public class Pickup : MonoBehaviour
                 // If slot is empty and the item is not already in inventory
                 if (inventory.isFull[i] == false && (containsSameItem == false || !itemSO.stackable))
                 {
+                    pickupAudio.Play();
                     // Set inventory as full, set inventory scriptable object
                     inventory.isFull[i] = true;
                     inventory.itemScriptableObj[i] = itemSO;
@@ -48,7 +53,9 @@ public class Pickup : MonoBehaviour
                     // Instantiate the item button in inventory
                     Instantiate(itemSO.itemButton, inventory.slots[i].transform, false);
                     // Destroy object on ground
-                    Destroy(gameObject);
+                    GetComponent<BoxCollider2D>().enabled = false;
+                    GetComponent<SpriteRenderer>().enabled = false;
+                    Destroy(gameObject, pickupAudio.clip.length);
                     break;
                 }
             }

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
   m_Name: BlueWood
   m_EditorClassIdentifier: 
-  inventorySlots: 01000000
+  inventorySlots: 
   itemName: Blue Woods
-  count: 2
+  count: 0
   item: {fileID: 7487270989273096264, guid: 387fe4cdec0cb40d8abc9049599501a4, type: 3}
   itemButton: {fileID: 7951463931281941573, guid: 923c19cc5dc3744e089fbe680d0e1a91, type: 3}
   itemSprite: {fileID: 6994764708312883157, guid: 8203a436898dd4d029bb1b0ebb6f1892, type: 3}

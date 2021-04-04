@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         timer = 0f;
         transform.position = startingPos.value;
+
     }
 
     void Update()

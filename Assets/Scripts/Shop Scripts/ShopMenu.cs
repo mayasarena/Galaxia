@@ -16,6 +16,8 @@ public class ShopMenu : MonoBehaviour
     public int selectedItem;
     public GameObject inventoryFullError;
     public TMP_Text confirmationText;
+    public AudioSource buyItemAudio;
+    public AudioSource fullAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -63,11 +65,13 @@ public class ShopMenu : MonoBehaviour
     {
         if (FindObjectOfType<Inventory>().isInventoryFull())
         {
+            fullAudio.Play();
             inventoryFullError.SetActive(true);
         }
 
         else
         {
+            buyItemAudio.Play();
             playerStatsManager.subtractMoney(prices[selectedItem]);
             playerStatsManager.updateXP(xpEarned[selectedItem]);
             FindObjectOfType<Pickup>().addItemToInventory(itemsForSale[selectedItem]); // Add to inventory

@@ -27,6 +27,10 @@ public class QuestMenu : MonoBehaviour
     {
         GameObject currentTemplate;
         GameObject questTemplate = transform.GetChild(0).gameObject;
+        for (int i = 1; i < transform.childCount; i++)
+        {
+            Destroy(transform.GetChild(i).gameObject);
+        }
         questTemplate.SetActive(true);
         noActiveQuests.SetActive(false);
 

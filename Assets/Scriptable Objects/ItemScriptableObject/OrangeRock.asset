@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
   m_Name: OrangeRock
   m_EditorClassIdentifier: 
-  inventorySlots: 04000000
+  inventorySlots: 
   itemName: Orange Rocks
-  count: 1
+  count: 0
   item: {fileID: 547900793005427284, guid: 7ea4a55d8f744472e8b75e7989e2d5a1, type: 3}
   itemButton: {fileID: 5481400575221473928, guid: 09f7b54293cc840338e0a2cf17240dc5, type: 3}
   itemSprite: {fileID: 4733999768194424628, guid: c6818dc91c8564ac1b6044fa0a69bbac, type: 3}

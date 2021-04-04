@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealthManager : MonoBehaviour
 {
-    public int maxHealth = 30;
+    public int maxHealth = 15;
     public int currentHealth;
     public GameObject particles;
     //public AudioSource hurtEnemyAudio;
@@ -20,6 +20,7 @@ public class EnemyHealthManager : MonoBehaviour
         currentHealth -= damage; // Decrease health
         if (currentHealth <= 0)
         {
+            FindObjectOfType<PlayerStatsManager>().GetComponent<PlayerStatsManager>().updateXP(maxHealth);
             Instantiate(particles, transform.position, transform.rotation);
             Destroy(gameObject); // Destroy enemy if killed
         }

@@ -5,16 +5,12 @@ using UnityEngine.UI;
 
 public class SpaceShip : MonoBehaviour
 {
-    public Text clickText;
-    public bool playerInBounds;
-    public TravelMenu travelMenu;
+    public GameObject travelButton;
     public QuestScriptableObject spaceShipQuest;
 
     // Start is called before the first frame update
     void Start()
     {
-        travelMenu = GameObject.Find("Travel Menu").GetComponent<TravelMenu>();
-        clickText.gameObject.SetActive(false);
         
         if (spaceShipQuest.isActive)
         {
@@ -24,24 +20,13 @@ public class SpaceShip : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0) && playerInBounds)
-        {
-            clickText.gameObject.SetActive(false);
-            travelMenu.Open();
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         // If player enters chatting bounds, stop and face player
         // Enable chat UI
         if (other.tag == "Player")
         {
-            clickText.gameObject.SetActive(true);
-            playerInBounds = true;
+            travelButton.SetActive(true);
         }
     }
 
@@ -51,8 +36,7 @@ public class SpaceShip : MonoBehaviour
         // Enable chat UI
         if (other.tag == "Player")
         {
-            clickText.gameObject.SetActive(false);
-            playerInBounds = false;
+            travelButton.SetActive(false);
         }
     }
 }

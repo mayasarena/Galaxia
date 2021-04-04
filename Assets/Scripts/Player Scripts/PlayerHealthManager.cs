@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthManager : MonoBehaviour
 {
@@ -9,31 +10,30 @@ public class PlayerHealthManager : MonoBehaviour
     public int maxHealth = 100;
     public GameObject player;
     public HealthBar healthBar;
+    public VectorValueScriptableObject respawnPositionVector;
 
     // Game Over stuff
-    public float fadeDuration = 1f;
+    private float fadeDuration = 1f;
     public float displayImageDuration = 1f;
     private float fadeTimer;
     public CanvasGroup deathUI;
     private bool playerIsDead = false;
-    public float deathDelay = 1f;
+    private float deathDelay = 1f;
     public GameObject healthParticles;
     public GameObject energyParticles;
-    public Transform respawnPoint;
+    public Vector2 respawnPoint;
     private bool dyingFromEnergy = false;
 
     public Slider energySlider;
     private int maxEnergy;
 
-    // Audio Stuff
-    /*
-    public AudioSource hitPlayerAudio;
-    public AudioSource deathAudio;
-    public AudioSource healAudio;
-    */
+    public bool invincible;
+    public float invincibilityLength = 1.5f;
+    private float invincibilityCounter = 0;
     
     void Start()
     {
+        deathUI.alpha = 0;
         maxEnergy = FindObjectOfType<PlayerStatsManager>().maxEnergy;
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(playerData.health);
@@ -45,15 +45,33 @@ public class PlayerHealthManager : MonoBehaviour
         {
             Die(); // :(
         }
+
+        if (invincibilityCounter > 0) // decrement time
+        {
+            invincibilityCounter -= Time.deltaTime;
+        }
+
+        else // set invincibility as false if there's no time left
+        {
+            invincible = false;
+        }
     }
 
     // Hurt the player
     public void HurtPlayer(int damage)
     {
-        //hitPlayerAudio.Play();
+        if (!invincible)
+        {
+            playerData.health -= damage; // Decrease health
+            healthBar.SetHealth(playerData.health); // Set healthbar UI
 
-        playerData.health -= damage; // Decrease health
-        healthBar.SetHealth(playerData.health); // Set healthbar UI
+            if (playerData.health > 0)
+            {
+                invincibilityCounter = invincibilityLength; // Start invincible counter
+                invincible = true;
+                StartCoroutine(Blink()); // blink player
+            }
+        }
 
         if (playerData.health <= 0) // Kill player
         {
@@ -111,26 +129,39 @@ public class PlayerHealthManager : MonoBehaviour
     private void Respawn()
     {
         playerIsDead = false;
-        dyingFromEnergy = false;
         player.GetComponent<SpriteRenderer>().enabled = true;
         player.GetComponent<PlayerMovement>().enabled = true;
         if (dyingFromEnergy)
         {
             playerData.energy = (int) maxEnergy/2;
             energySlider.value = playerData.energy;
+            dyingFromEnergy = false;
         }
         else{
             playerData.health = (int) maxHealth/2;
             healthBar.SetHealth(playerData.health);
         }
-        player.transform.position = respawnPoint.position;
-        deathUI.alpha = 0;
+        respawnPositionVector.value = respawnPoint;
+        FindObjectOfType<GameManager>().GetComponent<SaveAndLoad>().Save();
+        FindObjectOfType<GameManager>().GetComponent<SaveSceneState>().SavePositions();
+        SceneManager.LoadScene("HouseInterior");
     }
 
     public void energyDie()
     {
         dyingFromEnergy = true;
         StartCoroutine(DeathDelay());
+    }
+
+    private IEnumerator Blink()
+    {
+        while (invincible)
+        {
+            player.GetComponent<SpriteRenderer>().enabled = false;
+            yield return new WaitForSeconds(0.2f);
+            player.GetComponent<SpriteRenderer>().enabled = true;
+            yield return new WaitForSeconds(0.2f);
+        }
     }
     
  }

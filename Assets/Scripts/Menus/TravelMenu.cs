@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class TravelMenu : MonoBehaviour
 {
     public CanvasGroup travelMenu;
+    public GameObject travelButton;
+    public AudioSource openAudio;
     
      void Start()
     {
@@ -15,6 +17,8 @@ public class TravelMenu : MonoBehaviour
 
     public void Open()
     {
+        openAudio.Play();
+        travelButton.SetActive(false);
         travelMenu.blocksRaycasts = true;
         travelMenu.alpha = 1;
     }

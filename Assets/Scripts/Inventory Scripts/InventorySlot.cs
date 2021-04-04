@@ -8,7 +8,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 {
     private Inventory inventory;
     public int i;
-    [SerializeField] public ItemScriptableObject item;
+    public ItemScriptableObject item;
 
     private void Start()
     {

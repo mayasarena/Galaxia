@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56e9f97dce0a4fc7860e7c396aac8c0, type: 3}
   m_Name: RedRockQuest
   m_EditorClassIdentifier: 
-  isActive: 0
-  isCompleted: 1
+  isActive: 1
+  isCompleted: 0
   title: Red rock quest
   description: find 10 red rocks and bring them back to the alien.
   moneyReward: 2000

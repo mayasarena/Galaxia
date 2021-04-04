@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
   m_Name: RedRock
   m_EditorClassIdentifier: 
-  inventorySlots: 06000000
+  inventorySlots: 02000000
   itemName: Red Rocks
-  count: 61
+  count: 89
   item: {fileID: 8407461749977269431, guid: 267c21e91b71142be98b78aaa26a6c21, type: 3}
   itemButton: {fileID: 347972494058332203, guid: 56b33f927667947109abf37981d729dd, type: 3}
   itemSprite: {fileID: -144731405728930818, guid: c6818dc91c8564ac1b6044fa0a69bbac, type: 3}

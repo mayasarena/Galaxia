@@ -43,18 +43,24 @@ public class QuestNPC : MonoBehaviour
 
     void Start()
     {
-        if (!quest.isCompleted)
+        if (!quest.isCompleted && !quest.isActive)
         {
             dialogueText.text = dialogue;
         }
 
-        if (quest.isCompleted && quest.isItemQuest)
+        else if (quest.isActive && quest.isItemQuest)
+        {
+            dialogueText.text = "Come back to me when you have " + quest.amountNeeded + " " + quest.itemNeeded.itemName;
+            returned = true;
+        }
+
+        else if (quest.isCompleted && quest.isItemQuest)
         {
             dialogueText.text = "Thanks for the " + quest.itemNeeded.itemName + "!";
             returned = true;
         }
 
-        if (quest.isCompleted && !quest.isItemQuest)
+        else if ((quest.isCompleted || quest.isActive) && !quest.isItemQuest)
         {
             chatDisabled = true;
             disableQuestDialogue();

@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool loadPositions;
+
     void Start()
     {
-        
+        if (loadPositions)
+        {
+            GetComponent<SaveSceneState>().LoadPositions();
+        }
+        GetComponent<SaveAndLoad>().LoadInventoryData();
+        GetComponent<SaveAndLoad>().LoadPlayerData();
+        GetComponent<SaveAndLoad>().LoadQuestData();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -10,6 +10,8 @@ public class PauseMenu : MonoBehaviour
     public Button buildButton;
     public Button questButton;
     public Button inventoryExpandButton;
+    public AudioSource openPause;
+    public AudioSource closePause;
     
     void Start()
     {
@@ -22,6 +24,7 @@ public class PauseMenu : MonoBehaviour
         // Check if player ever presses Escape button, initiate the escape menu
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            openPause.Play();
             Time.timeScale = 0;
             buildButton.interactable = false;
             questButton.interactable = false;
@@ -33,6 +36,7 @@ public class PauseMenu : MonoBehaviour
 
     // Continue the game if the player presses continue
     public void Continue() {
+        closePause.Play();
         Time.timeScale = 1;
         buildButton.interactable = true;
         questButton.interactable = true;

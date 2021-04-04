@@ -7,9 +7,9 @@ public class UseItem : MonoBehaviour
 {
     private Transform player;
     public ItemScriptableObject itemSO;
-    public AudioClip buttonAudio;
     public int healAmount;
     public int energyAmount;
+    public AudioSource useAudio;
 
     private void Start()
     {
@@ -18,64 +18,72 @@ public class UseItem : MonoBehaviour
 
     public void Heal()
     {
-        AudioSource.PlayClipAtPoint(buttonAudio, Vector3.zero, 1.0f);  
-
         FindObjectOfType<PlayerHealthManager>().HealPlayer(healAmount); // Heal the player
-
+        useAudio.Play();
         itemSO.count -= 1;
 
-        // Just for good measure.. make sure any amount below 0 is set to 0 (can't have negative items)
-        if (itemSO.count < 1)
+        if (itemSO.count < 1 && itemSO.stackable)
         {
-            itemSO.count = 0;
+            itemSO.inventorySlots.RemoveAt(0);
+            GetComponent<CanvasGroup>().alpha = 0f;
+            GetComponent<CanvasGroup>().interactable = false;
+            Destroy(gameObject, useAudio.clip.length);
         }
 
         if (!itemSO.stackable)
         {
             itemSO.inventorySlots.RemoveAll(item => item == gameObject.transform.parent.GetComponent<InventorySlot>().i);
-            Destroy(gameObject);
+            GetComponent<CanvasGroup>().alpha = 0f;
+            GetComponent<CanvasGroup>().interactable = false;
+            Destroy(gameObject, useAudio.clip.length);
         }
     }
 
     public void Energize()
     {
-        AudioSource.PlayClipAtPoint(buttonAudio, Vector3.zero, 1.0f);  
-
         FindObjectOfType<PlayerStatsManager>().addEnergy(energyAmount); // Heal the player
-
+        useAudio.Play();
         itemSO.count -= 1;
 
-        // Just for good measure.. make sure any amount below 0 is set to 0 (can't have negative items)
-        if (itemSO.count < 1)
+        if (itemSO.count < 1 && itemSO.stackable)
         {
-            itemSO.count = 0;
+            itemSO.inventorySlots.RemoveAt(0);
+            GetComponent<CanvasGroup>().alpha = 0f;
+            GetComponent<CanvasGroup>().interactable = false;
+            Destroy(gameObject, useAudio.clip.length);
         }
 
         if (!itemSO.stackable)
         {
             itemSO.inventorySlots.RemoveAll(item => item == gameObject.transform.parent.GetComponent<InventorySlot>().i);
-            Destroy(gameObject);
+            GetComponent<CanvasGroup>().alpha = 0f;
+            GetComponent<CanvasGroup>().interactable = false;
+            Destroy(gameObject, useAudio.clip.length);
         }
     }
 
     public void Drop()
     {
-        AudioSource.PlayClipAtPoint(buttonAudio, Vector3.zero, 1.0f);  
         // Drop item near player and decrease item count
         Vector3 playerPos = new Vector2(player.position.x, player.position.y + 1);
         itemSO.count -= 1;
+        useAudio.Play();
         Instantiate(itemSO.item, playerPos, Quaternion.identity);
 
-        // Just for good measure.. make sure any amount below 0 is set to 0 (can't have negative items)
-        if (itemSO.count < 1)
+        if (itemSO.count < 1 && itemSO.stackable)
         {
-            itemSO.count = 0;
+            itemSO.inventorySlots.RemoveAt(0);
+            GetComponent<CanvasGroup>().alpha = 0f;
+            GetComponent<CanvasGroup>().interactable = false;
+            Destroy(gameObject, useAudio.clip.length);
         }
 
         if (!itemSO.stackable)
         {
             itemSO.inventorySlots.RemoveAll(item => item == gameObject.transform.parent.GetComponent<InventorySlot>().i);
-            Destroy(gameObject);
+            GetComponent<CanvasGroup>().alpha = 0f;
+            GetComponent<CanvasGroup>().interactable = false;
+            Destroy(gameObject, useAudio.clip.length);
         }
     }
 
@@ -85,13 +93,6 @@ public class UseItem : MonoBehaviour
         if (itemSO.count > 0 && itemSO.stackable)
         {
             gameObject.transform.Find("countText").GetComponent<Text>().text = itemSO.count.ToString();
-        }
-
-        // Destroy inventory item if there's zero of that item count
-        if (itemSO.count == 0 && itemSO.stackable)
-        {
-            itemSO.inventorySlots.RemoveAt(0);
-            Destroy(gameObject);
         }
     }
 }

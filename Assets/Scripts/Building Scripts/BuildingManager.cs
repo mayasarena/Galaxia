@@ -64,11 +64,17 @@ public class BuildingManager : MonoBehaviour
 
                     // Decrease money
                     GameObject.Find("PlayerStatsManager").GetComponent<PlayerStatsManager>().subtractMoney(activeCraftType.price);
+                    GameObject.Find("PlayerStatsManager").GetComponent<PlayerStatsManager>().updateXP((int) (activeCraftType.price / 7));
 
                     instantiate = false;
                     Destroy(target);
                     // Place craft down
                     Instantiate(activeCraftType.prefab, position, Quaternion.identity);
+
+                    // Add item to save data
+                    GameObject.Find("GameManager").GetComponent<SaveSceneState>().AddPositionAndCraft(activeCraftType.ID, position.x, 
+                        position.y);
+
                     isCraftSelected = false;
                 }
             }   

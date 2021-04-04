@@ -13,6 +13,8 @@ public class Shop : MonoBehaviour
     public Button questButton;
     public Button inventoryExpandButton;
 
+    public AudioSource shopAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +45,7 @@ public class Shop : MonoBehaviour
 
     public void openShop()
     {
+        shopAudio.Play();
         buildButton.interactable = false;
         questButton.interactable = false;
         inventoryExpandButton.interactable = false;
