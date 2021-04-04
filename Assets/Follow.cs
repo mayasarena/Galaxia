@@ -51,7 +51,7 @@ public class Follow : MonoBehaviour
     {
         if(col.gameObject.tag == "Player"){
             if(Timer > shotTimer){ //hurt player goes here
-                Debug.Log("Player hit");
+                //Debug.Log("Player hit");
                     
                 Timer = 0;
                 }
@@ -60,19 +60,19 @@ public class Follow : MonoBehaviour
         }
 
         if(col.gameObject.tag == "Environment"){
-            Debug.Log("Wall hit");
+            //Debug.Log("Wall hit");
             
         }
 
     }
 
-    void OnTriggerEnter2D(Collider2D col){
+    void OnTriggerEnter2D(Collider2D col){ //awake if in vision range
         if (col.gameObject.tag == "Player"){
             playerinrange = true;
         }
     }
 
-    void OnTriggerExit2D(Collider2D col){
+    void OnTriggerExit2D(Collider2D col){ //sleep when out of range
         if (col.gameObject.tag == "Player"){
             playerinrange = false;
         }
