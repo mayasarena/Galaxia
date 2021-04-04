@@ -8,14 +8,17 @@ public class Perlinwalls : MonoBehaviour
     public Tilemap map;
     //public TileBase platform;
     public TileBase wall;
-    public int seed = 0;
+    public int seed;
+    public int seedindex = 0;
     public float freq;
     // Start is called before the first frame update
     
 
     void Awake(){
     Tilemap tilemap = GetComponent<Tilemap>();
-        //seed = Random.Range(1000,10000);
+        GameObject SeedGO = GameObject.Find("SeedManager");
+        SeedManager seedman = SeedGO.GetComponent<SeedManager>();
+        seed = seedman.seedlist[seedindex];
         BoundsInt bounds = tilemap.cellBounds;
         TileBase[] allTiles = tilemap.GetTilesBlock(bounds);
         Debug.Log("Bounds x min" + bounds.xMin);
