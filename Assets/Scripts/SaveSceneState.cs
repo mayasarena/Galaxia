@@ -15,6 +15,10 @@ public class SaveSceneState : MonoBehaviour
     private static string POSX_PREFIX = "posX_";
     private static string POSY_PREFIX = "posY_";
 
+    private float posX;
+    private float posY;
+    private int craftID;
+
     private int i = 0;
 
     public void AddPositionAndCraft(int craftID, float x, float y)
@@ -47,14 +51,12 @@ public class SaveSceneState : MonoBehaviour
             i++;
         }
 
-        PlayerPrefs.SetInt("numberOfCrafts", i + 1);
+        PlayerPrefs.SetInt("numberOfCrafts", i);
+        print(PlayerPrefs.GetInt("numberOfCrafts"));
     }
 
     public void LoadPositions()
     {
-        float posX;
-        float posY;
-        int craftID;
         // Recreate lists
         for (int i = 0; i < PlayerPrefs.GetInt("numberOfCrafts"); i++)
         {

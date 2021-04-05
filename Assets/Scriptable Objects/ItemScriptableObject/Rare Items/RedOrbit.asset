@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
   m_Name: RedOrbit
   m_EditorClassIdentifier: 
-  inventorySlots: 01000000
+  inventorySlots: 
   itemName: red orbits
-  count: 15
+  count: 0
   item: {fileID: 3348555906495208133, guid: d71f8a83d25e643b08aa34edb2bf0328, type: 3}
   itemButton: {fileID: 705166258507869203, guid: cf52d520e16ba49448e0013ffbcc5c66, type: 3}
   itemSprite: {fileID: -4596918770069423762, guid: d504e78bc72bb4620a3ce5112bc9e60e, type: 3}

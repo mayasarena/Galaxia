@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
   m_Name: PurpleOrbit
   m_EditorClassIdentifier: 
-  inventorySlots: 00000000
+  inventorySlots: 
   itemName: purple orbits
-  count: 16
+  count: 0
   item: {fileID: 6014341811086755487, guid: 6f5517d6283e94d328550cccffcf37c1, type: 3}
   itemButton: {fileID: 2281069205660354066, guid: e51a93b1588944015b0ad58d38ac5ed0, type: 3}
   itemSprite: {fileID: -6717648874176230789, guid: d504e78bc72bb4620a3ce5112bc9e60e, type: 3}

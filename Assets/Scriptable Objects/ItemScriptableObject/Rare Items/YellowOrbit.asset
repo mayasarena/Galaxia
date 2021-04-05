@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
   m_Name: YellowOrbit
   m_EditorClassIdentifier: 
-  inventorySlots: 02000000
+  inventorySlots: 
   itemName: yellow orbits
-  count: 15
+  count: 0
   item: {fileID: 5827909979837906263, guid: 77b4e0d8a3def490a902c949f1dc9557, type: 3}
   itemButton: {fileID: 1236904907083120675, guid: b625302a61e974cc08ec7fc795188f4f, type: 3}
   itemSprite: {fileID: -4804929221285447996, guid: d504e78bc72bb4620a3ce5112bc9e60e, type: 3}

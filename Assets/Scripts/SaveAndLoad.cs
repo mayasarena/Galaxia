@@ -93,6 +93,7 @@ public class SaveAndLoad : MonoBehaviour
         foreach (QuestScriptableObject quest in questList)
         {
             quest.isActive = (PlayerPrefs.GetInt(QUEST_ACTIVE_PREFIX + i) != 0);
+            print((PlayerPrefs.GetInt(QUEST_ACTIVE_PREFIX + i) != 0));
             quest.isCompleted = (PlayerPrefs.GetInt(QUEST_COMPLETED_PREFIX + i) != 0);
             i++;
         }

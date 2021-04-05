@@ -26,7 +26,6 @@ public class MainMenu : MonoBehaviour
     public void ClearPlayerPrefs()
     {
         PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetInt("playerEnergy", maxEnergy);
-        PlayerPrefs.SetInt("playerHealth", maxHealth);
+        PlayerPrefs.SetInt("startup", 1);
     }
 }

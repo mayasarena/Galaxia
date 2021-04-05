@@ -23,7 +23,6 @@ public class SceneTransition : MonoBehaviour
     public void GoHome()
     {
         FindObjectOfType<GameManager>().GetComponent<SaveAndLoad>().Save();
-        FindObjectOfType<GameManager>().GetComponent<SaveSceneState>().SavePositions();
         entrancePositionVector.value = entrancePosition;
         SceneManager.LoadScene(sceneToLoad);
     }

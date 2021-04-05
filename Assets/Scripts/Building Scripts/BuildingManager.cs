@@ -72,6 +72,7 @@ public class BuildingManager : MonoBehaviour
                     Instantiate(activeCraftType.prefab, position, Quaternion.identity);
 
                     // Add item to save data
+                    print("add to save data");
                     GameObject.Find("GameManager").GetComponent<SaveSceneState>().AddPositionAndCraft(activeCraftType.ID, position.x, 
                         position.y);
 

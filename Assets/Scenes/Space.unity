@@ -137005,7 +137005,7 @@ MonoBehaviour:
   energySlider: {fileID: 371696640}
   invincible: 0
   invincibilityLength: 1
-  inSpace: 0
+  inSpace: 1
 --- !u!1 &1863805904
 GameObject:
   m_ObjectHideFlags: 0

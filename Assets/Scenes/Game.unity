@@ -8480,6 +8480,7 @@ MonoBehaviour:
   sceneToLoad: HouseInterior
   entrancePosition: {x: 6, y: -5}
   entrancePositionVector: {fileID: 11400000, guid: bb16ab5165006495ba144ae26e8dcb61, type: 2}
+  outside: 1
 --- !u!1 &785805965
 GameObject:
   m_ObjectHideFlags: 0

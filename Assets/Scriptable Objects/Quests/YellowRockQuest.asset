@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: YellowRockQuest
   m_EditorClassIdentifier: 
   isActive: 0
-  isCompleted: 1
+  isCompleted: 0
   title: Yellow rock quest
   description: find 5 yellow rocks and bring them back to the alien.
   moneyReward: 5000

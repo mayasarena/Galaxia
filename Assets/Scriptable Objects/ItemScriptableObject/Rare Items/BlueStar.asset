@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
   m_Name: BlueStar
   m_EditorClassIdentifier: 
-  inventorySlots: 03000000
+  inventorySlots: 
   itemName: Blue Stars
-  count: 40
+  count: 0
   item: {fileID: 8754101845387781975, guid: 1381ea668983f479fa9df69460b19c23, type: 3}
   itemButton: {fileID: 4151282428502962692, guid: 2befe75a6cd9e458eadfe740b00fcac0, type: 3}
   itemSprite: {fileID: -6106006261774185331, guid: 6340db995b49b431dbcfb8396d9135a7, type: 3}
