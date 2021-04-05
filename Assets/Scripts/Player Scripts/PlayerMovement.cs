@@ -11,13 +11,16 @@ public class PlayerMovement : MonoBehaviour
     private float timer;
     public float energyLossRate = 1f;
     public VectorValueScriptableObject startingPos;
+    public bool setStartPos = true;
     
     void Start()
     {
         anim = GetComponent<Animator>();
         timer = 0f;
-        transform.position = startingPos.value;
-
+        if (setStartPos)
+        {
+            transform.position = startingPos.value;
+        }
     }
 
     void Update()

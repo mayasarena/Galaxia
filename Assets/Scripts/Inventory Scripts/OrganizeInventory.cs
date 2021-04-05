@@ -18,7 +18,7 @@ public class OrganizeInventory : MonoBehaviour, IBeginDragHandler, IEndDragHandl
         itemButton = gameObject.GetComponent<Button>();
         rectTransform = gameObject.GetComponent<RectTransform>();
         canvasGroup = gameObject.GetComponent<CanvasGroup>();
-        canvas = GameObject.Find("InventoryCanvas").GetComponent<Canvas>(); 
+        canvas = GameObject.Find("HotBar").GetComponent<Canvas>(); 
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
     }
     void Update()
