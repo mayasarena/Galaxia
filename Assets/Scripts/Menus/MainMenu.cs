@@ -7,8 +7,6 @@ public class MainMenu : MonoBehaviour
 {
     public Vector2 spawnPoint;
     public VectorValueScriptableObject spawnPositionVector;
-    public int maxEnergy;
-    public int maxHealth = 100;
 
     // When Start is clicked, load the game scene
     public void LoadStart()
