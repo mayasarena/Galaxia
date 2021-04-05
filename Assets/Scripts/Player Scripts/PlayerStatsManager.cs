@@ -22,6 +22,12 @@ public class PlayerStatsManager : MonoBehaviour
         {
             playerData.energy = maxEnergy;
         }
+
+        if (playerData.energy <= 0)
+        {
+            playerData.energy = (int) maxEnergy/2;
+        }
+
         levelXPNeeded = (int) (Mathf.Pow(playerData.level, 2))*levelIncreaseRate;
         XPslider.maxValue = levelXPNeeded;
         XPslider.value = playerData.levelXP;

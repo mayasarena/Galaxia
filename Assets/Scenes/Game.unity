@@ -4707,9 +4707,9 @@ RectTransform:
   - {fileID: 340084410}
   - {fileID: 1877838474}
   - {fileID: 186903032}
-  - {fileID: 1587293575}
   - {fileID: 1211215170}
   - {fileID: 1149204913}
+  - {fileID: 1587293575}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5156,7 +5156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 3cd42088f2204468f90cfc8e46db75b7, type: 2}
   maxHealth: 100
-  player: {fileID: 0}
+  player: {fileID: 1113726121}
   healthBar: {fileID: 1411109708}
   respawnPositionVector: {fileID: 11400000, guid: bb16ab5165006495ba144ae26e8dcb61, type: 2}
   displayImageDuration: 1.5
@@ -10515,6 +10515,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108515280}
   m_CullTransparentMesh: 0
+--- !u!1 &1113726121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6829289079409837392, guid: 4a9baa2388cd847088db8c647bc30ca3, type: 3}
+  m_PrefabInstance: {fileID: 6829289079747279726}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1131225038
 GameObject:
   m_ObjectHideFlags: 0
@@ -10859,7 +10864,7 @@ RectTransform:
   m_Children:
   - {fileID: 466383196}
   m_Father: {fileID: 439947500}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11302,7 +11307,7 @@ RectTransform:
   - {fileID: 972260891}
   - {fileID: 346639916}
   m_Father: {fileID: 439947500}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14921,7 +14926,7 @@ RectTransform:
   m_Children:
   - {fileID: 1674962910}
   m_Father: {fileID: 439947500}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

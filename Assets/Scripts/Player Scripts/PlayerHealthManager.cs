@@ -37,6 +37,12 @@ public class PlayerHealthManager : MonoBehaviour
         maxEnergy = FindObjectOfType<PlayerStatsManager>().maxEnergy;
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(playerData.health);
+
+        if (playerData.health <= 0)
+        {
+            playerData.health = (int) maxHealth/2;
+            healthBar.SetHealth(playerData.health);
+        }
     }
 
     void Update()

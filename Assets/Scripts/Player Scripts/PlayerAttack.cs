@@ -10,7 +10,7 @@ public class PlayerAttack : MonoBehaviour
     private float step;
     private GameObject projectile;
     private bool projected;
-    private float disableTime = 1f;
+    private float disableTime = 0.4f;
     private float disableCounter = 0;
     private bool disabled;
 
