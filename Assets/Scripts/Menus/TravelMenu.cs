@@ -29,4 +29,32 @@ public class TravelMenu : MonoBehaviour
         travelMenu.alpha = 0;
         travelMenu.blocksRaycasts = false;
     }
+
+    public void Planet1()
+    {
+        FindObjectOfType<GameManager>().GetComponent<SaveAndLoad>().Save();
+        FindObjectOfType<GameManager>().GetComponent<SaveSceneState>().SavePositions();
+        SceneManager.LoadScene("Planet1");
+    }
+
+    public void Planet2()
+    {
+        FindObjectOfType<GameManager>().GetComponent<SaveAndLoad>().Save();
+        FindObjectOfType<GameManager>().GetComponent<SaveSceneState>().SavePositions();
+        SceneManager.LoadScene("Planet2");
+    }
+
+    public void Planet3()
+    {
+        FindObjectOfType<GameManager>().GetComponent<SaveAndLoad>().Save();
+        FindObjectOfType<GameManager>().GetComponent<SaveSceneState>().SavePositions();
+        SceneManager.LoadScene("Planet3");
+    }
+
+    public void Space()
+    {
+        FindObjectOfType<GameManager>().GetComponent<SaveAndLoad>().Save();
+        FindObjectOfType<GameManager>().GetComponent<SaveSceneState>().SavePositions();
+        SceneManager.LoadScene("Space");
+    }
 }

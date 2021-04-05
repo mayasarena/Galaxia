@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: EnergyPotion2
   m_EditorClassIdentifier: 
   inventorySlots: 
-  itemName: Ultra Energy Potion
+  itemName: Super Energy Potion
   count: 0
   item: {fileID: 7166462587461334136, guid: 14b0ce202134e4c95bd3a08f754c5af3, type: 3}
   itemButton: {fileID: 88157184641843381, guid: 6a825a9ea86724ee195e48597cd3321c, type: 3}
-  itemSprite: {fileID: 7953708376571075353, guid: 2cff2e37b9ef8414db870d6c61e9bee6, type: 3}
+  itemSprite: {fileID: -4119535421392819973, guid: b0d3d9b73617a44a7a770394cbf3210f, type: 3}
   stackable: 0

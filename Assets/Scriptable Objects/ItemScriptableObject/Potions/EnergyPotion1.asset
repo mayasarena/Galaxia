@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
   m_Name: EnergyPotion1
   m_EditorClassIdentifier: 
-  inventorySlots: 
-  itemName: Green Energy Potion
-  count: 0
+  inventorySlots: 07000000
+  itemName: Energy Potion
+  count: 1
   item: {fileID: 1170721949151684273, guid: e91957c4a9cd14f498c028f596e37053, type: 3}
   itemButton: {fileID: 8892487182550287430, guid: 1c298f23e2af74a7c9a0e69c6e7da032, type: 3}
-  itemSprite: {fileID: 4451291684459377097, guid: 2cff2e37b9ef8414db870d6c61e9bee6, type: 3}
+  itemSprite: {fileID: 678711669022620789, guid: b0d3d9b73617a44a7a770394cbf3210f, type: 3}
   stackable: 0

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
+  m_Name: EnergyPotion3
+  m_EditorClassIdentifier: 
+  inventorySlots: 
+  itemName: Mega Energy Potion
+  count: 0
+  item: {fileID: 8060822238913292152, guid: 06966afcef824473e995beb5f74f6423, type: 3}
+  itemButton: {fileID: 5940831098228506751, guid: 771c52031aac44a3ba6c0503a4dbb67d, type: 3}
+  itemSprite: {fileID: 6454395067861821195, guid: b0d3d9b73617a44a7a770394cbf3210f, type: 3}
+  stackable: 0

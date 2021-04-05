@@ -53,11 +53,13 @@ public class QuestMenu : MonoBehaviour
     {
         questMenuCanvas.blocksRaycasts = true;
         questMenuCanvas.alpha = 1;
+        Time.timeScale = 0;
     }
 
     public void Close() {
         questMenuCanvas.blocksRaycasts = false;
         questMenuCanvas.alpha = 0;
+        Time.timeScale = 1;
     }
     
 }

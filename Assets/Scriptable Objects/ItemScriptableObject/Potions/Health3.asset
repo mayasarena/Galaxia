@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
+  m_Name: Health3
+  m_EditorClassIdentifier: 
+  inventorySlots: 02000000
+  itemName: Mega Health Potion
+  count: 1
+  item: {fileID: 2975708077843257054, guid: 13a8b834406084792a47539ca085961e, type: 3}
+  itemButton: {fileID: 6488367305012733099, guid: cccc24369dfbb427b87f6c5c6d143957, type: 3}
+  itemSprite: {fileID: -8247630347403442395, guid: b0d3d9b73617a44a7a770394cbf3210f, type: 3}
+  stackable: 0

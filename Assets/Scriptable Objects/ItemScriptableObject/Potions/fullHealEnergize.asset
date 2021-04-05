@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
+  m_Name: fullHealEnergize
+  m_EditorClassIdentifier: 
+  inventorySlots: 
+  itemName: Awesome Potion
+  count: 0
+  item: {fileID: 4892136058841472763, guid: 5db6b4a2810f040e39702d4cebe0323c, type: 3}
+  itemButton: {fileID: 3947415401877663282, guid: cfc42a682d5074fe9b8219e75862cf14, type: 3}
+  itemSprite: {fileID: 6200406527303504730, guid: b0d3d9b73617a44a7a770394cbf3210f, type: 3}
+  stackable: 0

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f83b910fe49345e686d3a9db331efe8, type: 3}
   m_Name: Player Data
   m_EditorClassIdentifier: 
-  health: 100
-  money: 10000
-  totalXP: 0
-  levelXP: 0
-  level: 0
-  energy: 100
+  health: 50
+  money: 15950
+  totalXP: 5847
+  levelXP: 347
+  level: 6
+  energy: 86

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34938033f705f46cd996f3dce6d82363, type: 3}
+  m_Name: BlueOrbitTower
+  m_EditorClassIdentifier: 
+  craftName: Blue Orbit Tower
+  prefab: {fileID: 3822464469722021242, guid: d7ab0dc2277e54a34a9b2cf8e92cb86a, type: 3}
+  template: {fileID: 6951970750279502311, guid: 1ffbe8a8a238a4e1c98daf08d30ce8ce, type: 3}
+  craftSprite: {fileID: -4927331688678458694, guid: f0a4a337517e24707b97057dfb449d03, type: 3}
+  price: 2000
+  itemsNeeded:
+  - {fileID: 11400000, guid: 44605cec7635541bd88e5b6f37e39161, type: 2}
+  - {fileID: 11400000, guid: be484bb7058bf43148cbfed9cfc91520, type: 2}
+  amountNeeded: 0f00000005000000
+  ID: 10

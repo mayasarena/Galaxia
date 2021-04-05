@@ -30,6 +30,8 @@ public class PlayerHealthManager : MonoBehaviour
     public bool invincible;
     public float invincibilityLength = 1.5f;
     private float invincibilityCounter = 0;
+
+    public bool inSpace = false;
     
     void Start()
     {
@@ -127,7 +129,13 @@ public class PlayerHealthManager : MonoBehaviour
             Instantiate(healthParticles, player.transform.position, player.transform.rotation);
         }
         player.GetComponent<SpriteRenderer>().enabled = false;
-        player.GetComponent<PlayerMovement>().enabled = false;
+        if (!inSpace)
+        {
+            player.GetComponent<PlayerMovement>().enabled = false;
+        }
+        else{
+            player.GetComponent<PlayerMovementSpace>().enabled = false;
+        }
         yield return new WaitForSeconds(deathDelay);
         playerIsDead = true;
     }
@@ -136,7 +144,7 @@ public class PlayerHealthManager : MonoBehaviour
     {
         playerIsDead = false;
         player.GetComponent<SpriteRenderer>().enabled = true;
-        player.GetComponent<PlayerMovement>().enabled = true;
+        //player.GetComponent<PlayerMovement>().enabled = true;
         if (dyingFromEnergy)
         {
             playerData.energy = (int) maxEnergy/2;

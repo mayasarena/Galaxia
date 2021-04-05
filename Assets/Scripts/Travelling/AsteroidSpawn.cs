@@ -9,6 +9,7 @@ public class AsteroidSpawn : MonoBehaviour
     public bool spawnAsts = false;
     public bool spawnRight = false;
     public float Timer = 2f;
+    public GameObject explosionPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +50,7 @@ public class AsteroidSpawn : MonoBehaviour
             float speedlistselector = speedlist[Random.Range(0,speedlist.Length)];
             
             Astinfo.moveright = this.spawnRight; //set direction equal to spawners
+            Astinfo.explosion = explosionPrefab; 
             
             float[] rotspeedlist = {0.5f,0.75f,1,1.25f};
             float rotspeedlistselector = speedlist[Random.Range(0,speedlist.Length)];

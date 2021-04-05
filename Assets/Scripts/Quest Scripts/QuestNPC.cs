@@ -233,7 +233,7 @@ public class QuestNPC : MonoBehaviour
                 {
                     questButton.gameObject.SetActive(false);
                     dialogueBox.gameObject.SetActive(true);
-                    dialogueText.text = "Come back to me when you have " + quest.amountNeeded + " " + quest.itemNeeded.itemName;
+                    dialogueText.text = "Come back to me when you have " + quest.amountNeeded + " " + quest.itemNeeded.itemName + ".";
                 }
 
                 if (!quest.isCompleted && (quest.itemNeeded.count >= quest.amountNeeded) && returned)

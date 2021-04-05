@@ -14,7 +14,7 @@ public class PlayerStatsManager : MonoBehaviour
     public int levelXPNeeded;
     public int levelIncreaseRate;
     public Slider energySlider;
-    public int maxEnergy;
+    public int maxEnergy = 300;
 
     void Start()
     {

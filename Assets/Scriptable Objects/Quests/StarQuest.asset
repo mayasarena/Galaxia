@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56e9f97dce0a4fc7860e7c396aac8c0, type: 3}
+  m_Name: StarQuest
+  m_EditorClassIdentifier: 
+  isActive: 0
+  isCompleted: 0
+  title: Star Quest
+  description: Go to space and collect 3 purple stars, and then give them to the
+    alien.
+  moneyReward: 7000
+  xpReward: 1000
+  isItemQuest: 1
+  itemNeeded: {fileID: 11400000, guid: b1c9aeec3b6b74482888bd28627f2ee7, type: 2}
+  amountNeeded: 3

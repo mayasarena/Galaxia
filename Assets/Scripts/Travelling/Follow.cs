@@ -47,25 +47,6 @@ public class Follow : MonoBehaviour
     }
  }
 
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        if(col.gameObject.tag == "Player"){
-            if(Timer > shotTimer){ //hurt player goes here
-                //Debug.Log("Player hit");
-                    
-                Timer = 0;
-                }
-            
-            
-        }
-
-        if(col.gameObject.tag == "Environment"){
-            //Debug.Log("Wall hit");
-            
-        }
-
-    }
-
     void OnTriggerEnter2D(Collider2D col){ //awake if in vision range
         if (col.gameObject.tag == "Player"){
             playerinrange = true;

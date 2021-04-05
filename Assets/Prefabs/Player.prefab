@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 2
   m_Sprite: {fileID: 351222949178323776, guid: 54da93ea2b88847e09038251a72d4ae5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   moveSpeed: 6
   energyLossRate: 1
   startingPos: {fileID: 11400000, guid: bb16ab5165006495ba144ae26e8dcb61, type: 2}
+  setStartPos: 1
 --- !u!95 &6829289079409837354
 Animator:
   serializedVersion: 3
@@ -197,5 +198,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654c9900ffb8748abb8f5bdadd48dc6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 5859187563401111307, guid: b4b7257b8c4e84fae8122b8cf9fac9e8, type: 3}
+  projectilePrefab: {fileID: 524835440280349938, guid: cbf253881c5d34dc981b389fb19ac97d, type: 3}
   speed: 10

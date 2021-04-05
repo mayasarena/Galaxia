@@ -22,7 +22,7 @@ public class EnemyHealthManager : MonoBehaviour
         {
             FindObjectOfType<PlayerStatsManager>().GetComponent<PlayerStatsManager>().updateXP(maxHealth);
             Instantiate(particles, transform.position, transform.rotation);
-            Destroy(gameObject); // Destroy enemy if killed
+            Destroy(transform.parent.gameObject); // Destroy enemy if killed
         }
     }
 

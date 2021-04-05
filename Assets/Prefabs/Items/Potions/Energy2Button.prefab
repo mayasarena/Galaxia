@@ -177,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSO: {fileID: 11400000, guid: 3e85b60fc066a4ca9a42b740d3701854, type: 2}
   healAmount: 0
-  energyAmount: 100
+  energyAmount: 150
   useAudio: {fileID: -4832323618671993829}
 --- !u!82 &-4832323618671993829
 AudioSource:
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7953708376571075353, guid: 2cff2e37b9ef8414db870d6c61e9bee6, type: 3}
+  m_Sprite: {fileID: -4119535421392819973, guid: b0d3d9b73617a44a7a770394cbf3210f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

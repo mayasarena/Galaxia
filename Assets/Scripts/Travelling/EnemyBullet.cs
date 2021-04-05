@@ -15,10 +15,8 @@ public class EnemyBullet : MonoBehaviour {
         target =  GameObject.Find("Player");
         moveDirection = (target.transform.position - transform.position).normalized * moveSpeed;
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 2f);
     }
-
-
 
     void OnTriggerEnter2D(Collider2D col)
     {

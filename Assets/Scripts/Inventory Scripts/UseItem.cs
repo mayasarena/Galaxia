@@ -22,19 +22,12 @@ public class UseItem : MonoBehaviour
         useAudio.Play();
         itemSO.count -= 1;
 
-        if (itemSO.count < 1 && itemSO.stackable)
-        {
-            itemSO.inventorySlots.RemoveAt(0);
-            GetComponent<CanvasGroup>().alpha = 0f;
-            GetComponent<CanvasGroup>().interactable = false;
-            Destroy(gameObject, useAudio.clip.length);
-        }
-
-        if (!itemSO.stackable)
+        if (itemSO.count < 1)
         {
             itemSO.inventorySlots.RemoveAll(item => item == gameObject.transform.parent.GetComponent<InventorySlot>().i);
             GetComponent<CanvasGroup>().alpha = 0f;
             GetComponent<CanvasGroup>().interactable = false;
+            itemSO.count = 0;
             Destroy(gameObject, useAudio.clip.length);
         }
     }
@@ -45,20 +38,13 @@ public class UseItem : MonoBehaviour
         useAudio.Play();
         itemSO.count -= 1;
 
-        if (itemSO.count < 1 && itemSO.stackable)
-        {
-            itemSO.inventorySlots.RemoveAt(0);
-            GetComponent<CanvasGroup>().alpha = 0f;
-            GetComponent<CanvasGroup>().interactable = false;
-            Destroy(gameObject, useAudio.clip.length);
-        }
-
-        if (!itemSO.stackable)
+        if (itemSO.count < 1)
         {
             itemSO.inventorySlots.RemoveAll(item => item == gameObject.transform.parent.GetComponent<InventorySlot>().i);
             GetComponent<CanvasGroup>().alpha = 0f;
             GetComponent<CanvasGroup>().interactable = false;
             Destroy(gameObject, useAudio.clip.length);
+            itemSO.count = 0;
         }
     }
 
@@ -70,19 +56,12 @@ public class UseItem : MonoBehaviour
         useAudio.Play();
         Instantiate(itemSO.item, playerPos, Quaternion.identity);
 
-        if (itemSO.count < 1 && itemSO.stackable)
-        {
-            itemSO.inventorySlots.RemoveAt(0);
-            GetComponent<CanvasGroup>().alpha = 0f;
-            GetComponent<CanvasGroup>().interactable = false;
-            Destroy(gameObject, useAudio.clip.length);
-        }
-
-        if (!itemSO.stackable)
+        if (itemSO.count < 1)
         {
             itemSO.inventorySlots.RemoveAll(item => item == gameObject.transform.parent.GetComponent<InventorySlot>().i);
             GetComponent<CanvasGroup>().alpha = 0f;
             GetComponent<CanvasGroup>().interactable = false;
+            itemSO.count = 0;
             Destroy(gameObject, useAudio.clip.length);
         }
     }

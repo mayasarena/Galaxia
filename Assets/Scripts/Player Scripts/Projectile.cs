@@ -6,6 +6,11 @@ public class Projectile : MonoBehaviour
 {
     public Vector3 velocity;
 
+    void Start()
+    {
+        Destroy(gameObject, 3f);
+    }
+
     void Update()
     {
         transform.position += velocity * Time.deltaTime;

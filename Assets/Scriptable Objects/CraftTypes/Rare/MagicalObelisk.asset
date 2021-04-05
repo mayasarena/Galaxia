@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34938033f705f46cd996f3dce6d82363, type: 3}
+  m_Name: MagicalObelisk
+  m_EditorClassIdentifier: 
+  craftName: Magical Obelisk
+  prefab: {fileID: 5380620863972517104, guid: 6aef035935eb544b4b952a56779a1778, type: 3}
+  template: {fileID: 733942146167321927, guid: 498cae76d92ba47a6a416094f985a731, type: 3}
+  craftSprite: {fileID: 8279941866946492332, guid: a78130757fde7470497286de6bf0b29d, type: 3}
+  price: 2500
+  itemsNeeded:
+  - {fileID: 11400000, guid: c08ae132b070e4aa7977fc08147b1f24, type: 2}
+  - {fileID: 11400000, guid: 9b0a550ec4d2c41c1bd7f9318d9a4a60, type: 2}
+  amountNeeded: 0a00000005000000
+  ID: 11

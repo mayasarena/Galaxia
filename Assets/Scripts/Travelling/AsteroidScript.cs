@@ -8,6 +8,8 @@ public class AsteroidScript : MonoBehaviour
     public bool moveright = false;
     public float Rotationspeed;
     public bool Rotateright = false;
+
+    public GameObject explosion;
     // Start is called before the first frame update
     
     void Awake()
@@ -30,6 +32,7 @@ public class AsteroidScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {  
         if(col.gameObject.tag == "Player" || col.gameObject.tag == "Player"  ){
+            Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
         

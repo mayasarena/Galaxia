@@ -72,10 +72,12 @@ public class Inventory : MonoBehaviour
     public void inventoryMenuOpen()
     {
         inventoryOpen = true;
+        Time.timeScale = 0;
     }
 
     public void inventoryMenuClosed()
     {
         inventoryOpen = false;
+        Time.timeScale = 1;
     }
 }

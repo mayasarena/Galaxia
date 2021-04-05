@@ -13,6 +13,9 @@ public class PlayerMovementSpace : MonoBehaviour
     public float maxSpeed = 3;
     GameObject trailobject;
 
+    public float energyLossRate;
+    private float timer;
+
     void Awake(){
         Audiodata = this.gameObject.GetComponent<AudioSource>();
         Audiodata.Play(0);
@@ -21,6 +24,7 @@ public class PlayerMovementSpace : MonoBehaviour
 
     void Start()
     {
+        timer = 0f;
         trailobject = this.gameObject.transform.GetChild(0).gameObject;
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
@@ -48,6 +52,12 @@ public class PlayerMovementSpace : MonoBehaviour
         // Check if player is moving, set animation
         else
         {
+            timer += Time.deltaTime;
+            if (timer > energyLossRate)
+            {
+                timer = 0f;
+                FindObjectOfType<PlayerStatsManager>().subtractEnergy(1);
+            }
             isMoving = true;
             trailobject.SetActive(true);
             if( (!Audiodata.isPlaying) && isMoving == true ){
