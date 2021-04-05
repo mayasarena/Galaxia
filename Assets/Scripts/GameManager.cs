@@ -6,23 +6,18 @@ public class GameManager : MonoBehaviour
 {
     public bool loadPositions;
     public PlayerData playerData;
-    public ItemScriptableObject greyRocks;
-    public ItemScriptableObject redRocks;
+    public GameObject presents;
 
     void Start()
     {
-        if (PlayerPrefs.GetInt("startup") == 1)
+        print(PlayerPrefs.GetInt("startup"));
+        if (PlayerPrefs.GetInt("startup") == 0)
         {
-            GetComponent<SaveAndLoad>().LoadInventoryData();
-            GetComponent<SaveAndLoad>().LoadPlayerData();
-            greyRocks.count = 15;
-            greyRocks.inventorySlots.Add(0);
-            redRocks.count = 15;
-            redRocks.inventorySlots.Add(1);
+            presents.SetActive(true);
             playerData.health = 100;
             playerData.energy = 300;
-            playerData.money = 2000;
-            PlayerPrefs.SetInt("startup", 0);
+            playerData.money = 3000;
+            PlayerPrefs.SetInt("startup", 1);
         }
 
         else

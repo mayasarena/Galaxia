@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
   m_Name: GreenOrbit
   m_EditorClassIdentifier: 
-  inventorySlots: 08000000
+  inventorySlots: 
   itemName: green orbits
-  count: 2
+  count: 0
   item: {fileID: 3898627456885585426, guid: 3024bc3edf91c43dc8ee82fe5a88b4ff, type: 3}
   itemButton: {fileID: 3869883817494095676, guid: af62102e44cb34d2bab92cc4d4361d8a, type: 3}
   itemSprite: {fileID: 6224218743198188419, guid: d504e78bc72bb4620a3ce5112bc9e60e, type: 3}

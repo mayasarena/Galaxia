@@ -119,5 +119,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadPositions: 0
   playerData: {fileID: 11400000, guid: 3cd42088f2204468f90cfc8e46db75b7, type: 2}
-  greyRocks: {fileID: 11400000, guid: 44605cec7635541bd88e5b6f37e39161, type: 2}
-  redRocks: {fileID: 11400000, guid: 25de327379ac146748524dc3e79cf4af, type: 2}
+  presents: {fileID: 0}

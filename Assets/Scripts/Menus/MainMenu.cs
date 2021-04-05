@@ -24,6 +24,6 @@ public class MainMenu : MonoBehaviour
     public void ClearPlayerPrefs()
     {
         PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetInt("startup", 1);
+        PlayerPrefs.SetInt("startup", 0);
     }
 }

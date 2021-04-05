@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7502e200cd4c94218be638a12a5a69e0, type: 3}
   m_Name: EnergyPotion1
   m_EditorClassIdentifier: 
-  inventorySlots: 07000000
+  inventorySlots: 
   itemName: Energy Potion
-  count: 1
+  count: 0
   item: {fileID: 1170721949151684273, guid: e91957c4a9cd14f498c028f596e37053, type: 3}
   itemButton: {fileID: 8892487182550287430, guid: 1c298f23e2af74a7c9a0e69c6e7da032, type: 3}
   itemSprite: {fileID: 678711669022620789, guid: b0d3d9b73617a44a7a770394cbf3210f, type: 3}
