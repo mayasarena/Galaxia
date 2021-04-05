@@ -1807,7 +1807,7 @@ ScriptsOnlyBuild:
     className: CameraController
   - hash:
       serializedVersion: 2
-      Hash: 4b43a8b7f37a7f94867e42bad9c97884
+      Hash: 214a3b3caabd44d7c9b5bdd483b4e425
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SceneTransition
@@ -2024,5 +2024,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Planet2.unity
   - Assets/Scenes/Planet3.unity
   - Assets/Scenes/Space.unity
-  playerPath: /Users/mayamon/Desktop/Galaxia Windows Build/GalaxiaWindowsBuild/Game
-    Prototype.exe
+  playerPath: /Users/mayamon/Desktop/WindowsBuildGalaxia/Game Prototype.exe
