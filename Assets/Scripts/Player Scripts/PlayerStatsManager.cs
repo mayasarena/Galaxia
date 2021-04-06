@@ -49,6 +49,7 @@ public class PlayerStatsManager : MonoBehaviour
             playerData.levelXP = playerData.levelXP - levelXPNeeded;
             playerData.level += 1;
             levelAmountText.text = playerData.level.ToString();
+            totalXPText.text = playerData.totalXP.ToString();
             levelXPNeeded = (int) (Mathf.Pow(playerData.level, 2))*levelIncreaseRate;
             XPslider.maxValue = levelXPNeeded;
         }

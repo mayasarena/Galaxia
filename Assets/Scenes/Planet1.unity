@@ -9527,6 +9527,7 @@ MonoBehaviour:
   sceneToLoad: HouseInterior
   entrancePosition: {x: 3, y: 1.5}
   entrancePositionVector: {fileID: 11400000, guid: bb16ab5165006495ba144ae26e8dcb61, type: 2}
+  outside: 0
 --- !u!114 &465233661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10227,8 +10228,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1487891799}
-        m_TargetAssemblyTypeName: SaveSceneState, Assembly-CSharp
-        m_MethodName: SavePositions
+        m_TargetAssemblyTypeName: SaveAndLoad, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10241,18 +10242,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1475289357}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1487891800}
-        m_TargetAssemblyTypeName: SaveAndLoad, Assembly-CSharp
-        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12312,18 +12301,6 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1487891799}
-        m_TargetAssemblyTypeName: SaveSceneState, Assembly-CSharp
-        m_MethodName: SavePositions
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1487891800}
         m_TargetAssemblyTypeName: SaveAndLoad, Assembly-CSharp
         m_MethodName: Save
         m_Mode: 1
@@ -18050,17 +18027,6 @@ Transform:
   m_PrefabInstance: {fileID: 1487891797}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1487891799 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7613024276690250562, guid: 1d55bd8efe060428b97b4f0aa4284644, type: 3}
-  m_PrefabInstance: {fileID: 1487891797}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e10d41b6bc0f4f6b9c3cc1ba79707d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1487891800 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7613024276690250621, guid: 1d55bd8efe060428b97b4f0aa4284644, type: 3}
   m_PrefabInstance: {fileID: 1487891797}

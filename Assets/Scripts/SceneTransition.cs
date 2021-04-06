@@ -16,9 +16,9 @@ public class SceneTransition : MonoBehaviour
         {
             if (outside)
             {
-                FindObjectOfType<GameManager>().GetComponent<SaveAndLoad>().Save();
                 FindObjectOfType<GameManager>().GetComponent<SaveSceneState>().SavePositions();
             }
+            FindObjectOfType<GameManager>().GetComponent<SaveAndLoad>().Save();
             entrancePositionVector.value = entrancePosition;
             SceneManager.LoadScene(sceneToLoad);
         }

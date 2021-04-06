@@ -156,8 +156,6 @@ public class PlayerHealthManager : MonoBehaviour
             healthBar.SetHealth(playerData.health);
         }
         respawnPositionVector.value = respawnPoint;
-        FindObjectOfType<GameManager>().GetComponent<SaveAndLoad>().Save();
-        FindObjectOfType<GameManager>().GetComponent<SaveSceneState>().SavePositions();
         SceneManager.LoadScene("HouseInterior");
     }
 

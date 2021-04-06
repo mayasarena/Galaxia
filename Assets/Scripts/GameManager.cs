@@ -18,18 +18,17 @@ public class GameManager : MonoBehaviour
             playerData.energy = 300;
             playerData.money = 3000;
             PlayerPrefs.SetInt("startup", 1);
+            GetComponent<SaveAndLoad>().Save();
+
         }
 
-        else
+        if (loadPositions)
         {
-            if (loadPositions)
-            {
-                GetComponent<SaveSceneState>().LoadPositions();
-            }
-            GetComponent<SaveAndLoad>().LoadInventoryData();
-            GetComponent<SaveAndLoad>().LoadPlayerData();
-            GetComponent<SaveAndLoad>().LoadQuestData();
+            GetComponent<SaveSceneState>().LoadPositions();
         }
+        GetComponent<SaveAndLoad>().LoadInventoryData();
+        GetComponent<SaveAndLoad>().LoadPlayerData();
+        GetComponent<SaveAndLoad>().LoadQuestData();
     }
 
 }

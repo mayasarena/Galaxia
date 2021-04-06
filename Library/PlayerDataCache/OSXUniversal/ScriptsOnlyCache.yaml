@@ -53,6 +53,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -1806,7 +1807,7 @@ ScriptsOnlyBuild:
     className: CameraController
   - hash:
       serializedVersion: 2
-      Hash: 4b43a8b7f37a7f94867e42bad9c97884
+      Hash: 214a3b3caabd44d7c9b5bdd483b4e425
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SceneTransition
@@ -2023,4 +2024,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Planet2.unity
   - Assets/Scenes/Planet3.unity
   - Assets/Scenes/Space.unity
-  playerPath: /Users/mayamon/Desktop/galaxia demo build.app
+  playerPath: /Users/mayamon/Desktop/pls work.app
