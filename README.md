@@ -36,7 +36,6 @@ Build a spaceship to travel! Go to a variety of 3 planets. Watch out for enemies
 <img src="screenshots/attack.gif" width="600">
 
 ## Go to space and collect stars!
-At the end of each level, collect an item that will make Bob prettier! 
 <p float="center">
 <img src="screenshots/space.gif" width="600">
 </p>
